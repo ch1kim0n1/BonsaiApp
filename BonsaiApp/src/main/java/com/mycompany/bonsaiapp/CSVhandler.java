@@ -5,26 +5,42 @@
 package com.mycompany.bonsaiapp;
 
 import java.util.HashMap;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author alejandrodiaz
  */
 public class CSVhandler {
+    private String csvFile;
 
-    private HashMap<String, User> users;
-    private HashMap<String, Transaction> transactions;
-    
-    public CSVhandler() {
-        //all build methods must be called in here
+    public CSVhandler(String csvFile) {
+        this.csvFile = csvFile;
     }
-    
-    public void buildUsers() {
-        try {
-            
-            users = new HashMap<>();
-            
-            //Scanner file = new Scanner(new file("UsersCSV"))
+
+    public List<String[]> readData() throws IOException {
+        List<String[]> records = new ArrayList<>();
+        try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] values = line.split(",");
+                records.add(values);
+            }
+        }
+        return records;
+    }
+
+    public void writeData(List<String[]> records) throws IOException {
+        try (FileWriter writer = new FileWriter(csvFile)) {
+            for (String[] record : records) {
+                String line = String.join(",", record);
+                writer.write(line + System.lineSeparator());
+            }
         }
     }
 }

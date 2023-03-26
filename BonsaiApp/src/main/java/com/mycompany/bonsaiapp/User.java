@@ -16,20 +16,25 @@ public class User {
     private String userName;
     private String displayName;
     private String password;
+    private double credit;
+    private double debt;
     private ArrayList<Transaction> transactions;
 
-    public User(String userName, String displayName, String password, ArrayList<Transaction> t) {
+    public User(String userName, String displayName, String password,double credit, double debt, ArrayList<Transaction> t) {
         this.userName = userName;
         this.displayName = displayName;
         this.password = password;
+        this.credit = credit;
+        this.debt = debt;
+        this.transactions = new ArrayList<>();
     }
 
-    public String getUserName() {
+    public String getName() {
         return userName;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setName(String name) {
+        this.userName = name;
     }
 
     public String getDisplayName() {
@@ -48,11 +53,19 @@ public class User {
         this.password = password;
     }
 
-    public ArrayList<Transaction> getTransactions() {
-        return transactions;
+    public double getCredit() {
+        return credit;
     }
 
-    public void setTransactions(ArrayList<Transaction> transactions) {
-        this.transactions = transactions;
+    public void setCredit(double credit) {
+        this.credit = credit;
+    }
+
+    public double getDebt() {
+        return debt;
+    }
+
+    public void setDebt(double debt) {
+        this.debt = debt;
     }
 }
