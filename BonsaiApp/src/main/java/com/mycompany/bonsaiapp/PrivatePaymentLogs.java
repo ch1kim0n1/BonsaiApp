@@ -5,7 +5,6 @@
 package com.mycompany.bonsaiapp;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  *
@@ -21,10 +20,12 @@ public class PrivatePaymentLogs {
     }
     
     public void addTransaction(Transaction transaction) {
-        // logic to add a confirmed transaction to the list
+        //TODO
+        //logic to add a confirmed transaction to the list
     }
     
     public void display() {
-        // logic to display all confirmed transactions the user has made or received
+        //TODO
+        //logic to display all confirmed transactions the user has made or received
     }
 }

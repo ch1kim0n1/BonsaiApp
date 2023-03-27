@@ -12,6 +12,12 @@ import java.util.ArrayList;
  */
 
 public class User {
+    //The most important class of all, this class will store and will be able to change info about users
+    // as their name, display name, password, and etc.
+    //This class will be able to change values of dept and creadit towards other users
+    //This class also will be able to store the Transaction list of the persons transactions(Accessable by key of his username)
+    
+    //TODO: delete some setters
     
     private String userName;
     private String displayName;

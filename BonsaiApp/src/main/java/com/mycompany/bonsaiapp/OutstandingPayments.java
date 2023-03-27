@@ -16,6 +16,7 @@ public class OutstandingPayments {
     }
     
     public void display() {
-        // logic to display a compiled list of debts other people have for the user
+        //TODO
+        //logic to display a compiled list of debts other people have for the user
     }
 }

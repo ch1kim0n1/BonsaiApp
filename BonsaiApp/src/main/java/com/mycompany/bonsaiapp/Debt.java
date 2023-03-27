@@ -9,6 +9,10 @@ package com.mycompany.bonsaiapp;
  * @author skyla
  */
 public class Debt {
+    //This class will store and later give informaiton about 
+    //any dept of the user, this class also has authority
+    //to modify/change numbers or amounts
+    //With this class we can eather get info about excisting dept or set a new one
     private String debtorName;
     private double amount;
     private String reason;

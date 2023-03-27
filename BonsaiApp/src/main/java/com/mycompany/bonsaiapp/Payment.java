@@ -10,6 +10,9 @@ import java.time.LocalDateTime;
  * @author skyla
  */
 public class Payment {
+    //This class will be used to collect and create info about payments to create history about payments
+    //this class can return and set new payments form user to user
+    //TODO: add more methods to identify users
     
     private LocalDateTime dateTime;
     private String reason;

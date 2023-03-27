@@ -16,6 +16,7 @@ public class Dashboard {
     }
     
     public void display() {
-        // logic to display all the money the user owes people
+        //TODO
+        //logic to display all the money the user owes people
     }
 }

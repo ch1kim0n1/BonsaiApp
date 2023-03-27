@@ -9,6 +9,10 @@ package com.mycompany.bonsaiapp;
  * @author alejandrodiaz
  */
 public class Transaction {
+    //this class will contain transaction and all corresponding info in correct order
+    //you can create and modify transactions if you want, but need to be careful as 
+    //some of the setters are not suppose to be here, and I dont know which exactly
+    //From -> type -> amount -> To -> reason -> date -> time(Current?)
     
     private String userNameFrom;
     private String transactionType;

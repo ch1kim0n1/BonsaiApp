@@ -18,6 +18,8 @@ public class Login {
     }
 
     public User validateUser(String userName, String password) {
+        //Very simple logic for the login information
+        //CHANGE as GUI will be developed
         for (User user : users) {
             if (user.getName().equals(userName) && user.getPassword().equals(password)) {
                 return user;

@@ -12,8 +12,9 @@ import java.util.Map;
  * @author skyla
  */
 public class PersonalTransactionTargets {
+    //This method will help set the goals to pay out
     private User user;
-    private Map<String, Double> targets; // Map to store targets with names and total amount owed
+    private Map<String, Double> targets; //Map to store targets with names and total amount owed
     
     public PersonalTransactionTargets(User user) {
         this.user = user;
