@@ -13,13 +13,15 @@ import java.util.List;
  */
 public class DataFactory {
     private final CSVhandler csvHandler;
+    private CSVhandler csvTransaction;
 
-    public DataFactory(CSVhandler csvHandler) {
+    public DataFactory(CSVhandler csvHandler, CSVhandler csvTransaction) {
         this.csvHandler = csvHandler;
+        this.csvTransaction = csvTransaction;
     }
 
-    public List<User> getUsers() throws IOException {
-        List<User> users = new ArrayList<>();
+    public ArrayList<User> getUsers() throws IOException {
+        ArrayList<User> users = new ArrayList<>();
         List<String[]> data = csvHandler.readData();
         for (String[] row : data) {
             String name = row[0];
@@ -35,7 +37,7 @@ public class DataFactory {
     }
 
     public void saveUsers(List<User> users) throws IOException {
-        List<String[]> data = new ArrayList<>();
+        ArrayList<String[]> data = new ArrayList<>();
         for (User user : users) {
             String[] row = { user.getName(), user.getDisplayName(), user.getPassword(), Double.toString(user.getCredit()), Double.toString(user.getDebt()) };
             data.add(row);
@@ -43,8 +45,8 @@ public class DataFactory {
         csvHandler.writeData(data);
     }
 
-    public List<Transaction> getTransactions() throws IOException {
-        List<Transaction> transactions = new ArrayList<>();
+    public ArrayList<Transaction> getTransactions() throws IOException {
+        ArrayList<Transaction> transactions = new ArrayList<>();
         List<String[]> data = csvHandler.readData();
         for (String[] row : data) {
             String userNameFrom = row[0];
@@ -61,7 +63,7 @@ public class DataFactory {
     }
 
     public void saveTransactions(List<Transaction> transactions) throws IOException {
-        List<String[]> data = new ArrayList<>();
+        ArrayList<String[]> data = new ArrayList<>();
         for (Transaction transaction : transactions) {
             String[] row = { transaction.getUserNameFrom(), transaction.getTransactionType(), Double.toString(transaction.getAmount()), transaction.getUserNameTo(), transaction.getReason(), transaction.getDate(), transaction.getTime() };
             data.add(row);

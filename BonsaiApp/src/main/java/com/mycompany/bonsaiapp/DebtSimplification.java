@@ -14,8 +14,8 @@ import java.util.Map;
  */
 public class DebtSimplification {
     
-    private List<Transaction> transactions;
-    private List<User> users;
+    private ArrayList<Transaction> transactions;
+    private ArrayList<User> users;
 
     public DebtSimplification() {
         this.transactions = new ArrayList<>();
@@ -30,8 +30,8 @@ public class DebtSimplification {
         transactions.add(transaction);
     }
 
-    public List<Transaction> simplifyDebts() {
-        List<Transaction> simplifiedTransactions = new ArrayList<>();
+    public ArrayList<Transaction> simplifyDebts() {
+        ArrayList<Transaction> simplifiedTransactions = new ArrayList<>();
 
         // Calculate debts and credits for each user
         for (User user : users) {

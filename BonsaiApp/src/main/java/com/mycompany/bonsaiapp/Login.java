@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.bonsaiapp;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -10,9 +11,9 @@ import java.util.List;
  * @author skyla
  */
 public class Login {
-    private List<User> users;
+    private ArrayList<User> users;
 
-    public Login(List<User> users) {
+    public Login(ArrayList<User> users) {
         this.users = users;
     }
 

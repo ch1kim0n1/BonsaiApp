@@ -23,8 +23,8 @@ public class CSVhandler {
         this.csvFile = csvFile;
     }
 
-    public List<String[]> readData() throws IOException {
-        List<String[]> records = new ArrayList<>();
+    public ArrayList<String[]> readData() throws IOException {
+        ArrayList<String[]> records = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
             String line;
             while ((line = br.readLine()) != null) {
@@ -35,7 +35,7 @@ public class CSVhandler {
         return records;
     }
 
-    public void writeData(List<String[]> records) throws IOException {
+    public void writeData(ArrayList<String[]> records) throws IOException {
         try (FileWriter writer = new FileWriter(csvFile)) {
             for (String[] record : records) {
                 String line = String.join(",", record);

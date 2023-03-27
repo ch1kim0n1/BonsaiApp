@@ -1,0 +1,4 @@
+Username	Owe-request	Amount	To Whom	Reason	Date	Time	Done?
+alejdiaz	owe	50	chikimoni	fortnite skin	3/20	8:05 AM	Y
+alejdiaz	owe	5	chikimoni	starbucks	3/21	9:05 AM	N
+chikimoni	owe	15	alejdiaz	ice cream	3/22	12:35 PM	Y

@@ -13,7 +13,7 @@ import java.util.List;
  */
 public class PrivatePaymentLogs {
     private User user;
-    private List<Transaction> transactions;
+    private ArrayList<Transaction> transactions;
     
     public PrivatePaymentLogs(User user) {
         this.user = user;
