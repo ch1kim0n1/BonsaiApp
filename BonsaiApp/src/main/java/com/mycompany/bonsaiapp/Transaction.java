@@ -21,8 +21,9 @@ public class Transaction {
     private String reason;
     private String date;
     private String time;
+    private boolean done;
 
-    public Transaction(String userNameFrom, String transactionType, double amount, String userNameTo, String reason, String date, String time) {
+    public Transaction(String userNameFrom, String transactionType, double amount, String userNameTo, String reason, String date, String time, boolean done) {
         this.userNameFrom = userNameFrom;
         this.transactionType = transactionType;
         this.amount = amount;
@@ -30,7 +31,17 @@ public class Transaction {
         this.reason = reason;
         this.date = date;
         this.time = time;
+        this.done = done;
     }
+
+    public boolean isDone() {
+        return done;
+    }
+
+    public void setDone(boolean done) {
+        this.done = done;
+    }
+    
 
     public String getUserNameFrom() {
         return userNameFrom;
