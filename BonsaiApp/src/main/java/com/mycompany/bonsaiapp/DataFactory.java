@@ -5,6 +5,7 @@
 package com.mycompany.bonsaiapp;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -46,9 +47,9 @@ public class DataFactory {
         csvTransaction.writeData(data);
     }
     
-    public ArrayList<User> BuildUsers() throws IOException {
-        ArrayList<User> users = new ArrayList<>();
-        List<String[]> data = csvHandler.readData();
+    public HashMap<String, User> BuildUsers() throws IOException {
+        HashMap<String, User> users = new HashMap<>();
+        ArrayList<String[]> data = csvHandler.readData();
         for (String[] row : data) {
             String name = row[0];
             String displayName = row[1];
@@ -57,10 +58,11 @@ public class DataFactory {
             double debt = Double.parseDouble(row[4]);
             ArrayList<Transaction> transactions = new ArrayList<>();
             User user = new User(name, displayName, password, credit, debt, transactions);
-            users.add(user);
+            users.put(name, user);
         }
         return users;
     }
+
 
     public ArrayList<Transaction> BuildTransactions() throws IOException {
         ArrayList<Transaction> transactions = new ArrayList<>();

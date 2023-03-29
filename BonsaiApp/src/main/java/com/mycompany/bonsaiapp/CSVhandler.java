@@ -6,10 +6,12 @@ package com.mycompany.bonsaiapp;
 
 import java.util.HashMap;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
@@ -23,6 +25,7 @@ public class CSVhandler {
     }
 
     public ArrayList<String[]> readData() throws IOException {
+         Scanner file = new Scanner(new File("DataSample" + File.separator + "UserCSV.csv"));
         //This method read CSV files and return you the content of the file you assigned as a String[]
         ArrayList<String[]> records = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {

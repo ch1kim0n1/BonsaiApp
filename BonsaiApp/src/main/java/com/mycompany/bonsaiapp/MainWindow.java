@@ -4,6 +4,16 @@
  */
 package com.mycompany.bonsaiapp;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+import java.util.Scanner;
+import java.util.TreeSet;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author skyla
@@ -76,6 +86,58 @@ public class MainWindow extends javax.swing.JFrame {
             }
         });
     }
+    
+    private String getCurrentFileLocation() {
+
+        try
+        {
+        Scanner file = new Scanner(new File("preferences.txt"));
+        return file.nextLine();
+        }
+
+        catch(FileNotFoundException ex)
+        {
+            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
+    
+//    private void buildLogsTable(TreeSet<LogEntry> logs) {
+//
+//        if (logs == null || logs.size() == 0) {
+//            return;
+//        }
+//        
+//        Object[][] data = new Object[logs.size()][2];
+//        String[] columnHeaders = {"Time Stamp", "Employee"};
+//     
+//        int row = 0;
+//        
+//        for (LogEntry log : logs) {
+//            GregorianCalendar open = log.getTimeStamp();
+//            String am_pm = (open.get(Calendar.AM_PM) == 0) ? "am" : "pm";
+//            int hour = (open.get(Calendar.HOUR)==0)? 12 : open.get(Calendar.HOUR);
+//            String minute = (open.get(Calendar.MINUTE) < 10)? "0"+open.get(Calendar.MINUTE) : ""+open.get(Calendar.MINUTE);
+//            String opFormatted = "" + hour+ ":" + minute + " " + am_pm ; 
+//            data[row][0] = opFormatted;
+//            int id = log.getEmployeeID();
+//            
+//            String name = id + " - " + badges.get(id).getName();
+//            name = name.substring(1, name.length()-1);
+//            name = name.substring(0,8) + name.substring(9);
+//            //name = name.substring(8,9);
+//            data[row][1] = name; 
+//            
+//            
+//            
+//            row++;
+//            
+//        }
+//        
+//        DefaultTableModel dfm = (DefaultTableModel)doors_table_log.getModel();
+//        dfm.setDataVector(data, columnHeaders);
+//    
+//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
