@@ -84,7 +84,7 @@ public class DebtSimplification {
                     creditor.getName(),
                     "Simplified debt",
                     "Today",
-                    "Now");
+                    "Now", true);
 
             simplifiedTransactions.add(simplifiedTransaction);
         }

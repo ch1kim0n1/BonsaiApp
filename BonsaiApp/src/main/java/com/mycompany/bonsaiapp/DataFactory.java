@@ -5,56 +5,27 @@
 package com.mycompany.bonsaiapp;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Scanner;
 
-/**
- *
- * @author skyla
- */
-public class DataFactory {
+public class DataFactory implements Serializable{
     
     private HashMap<String, User> users;
     private ArrayList<Transaction> transactions;
 
-    public DataFactory() throws IOException {
+    public DataFactory() {
         BuildUsers();
         BuildTransactions();
     }
-
-    //TEST ID WE NEED THEM AT ALL
-    public void saveUsers(List<User> users) throws IOException {
-        //This method will save all of the users that you could locallcy create or save 
-        //and it writes of the NEW users into the csv file (Working as writeData from CSVhandler) 
-        ArrayList<String[]> data = new ArrayList<>();
-        for (User user : users) {
-            String[] row = { user.getName(), user.getDisplayName(), user.getPassword(), Double.toString(user.getCredit()), Double.toString(user.getDebt()) };
-            data.add(row);
-        }
-        //csvHandler.writeData(data); directly write the data into the csv files
-    }
     
-    //TEST ID WE NEED THEM AT ALL
-    public void saveTransactions(List<Transaction> transactions) throws IOException {
-        //This method will save all of the transaction info that you could locallcy create or save 
-        //and it writes of the NEW transactions into the csv file (Working as writeData from CSVhandler) 
-        ArrayList<String[]> data = new ArrayList<>();
-        for (Transaction transaction : transactions) {
-            String[] row = { transaction.getUserNameFrom(), transaction.getTransactionType(), Double.toString(transaction.getAmount()), transaction.getUserNameTo(), transaction.getReason(), transaction.getDate(), transaction.getTime() };
-            data.add(row);
-        }
-        //csvTransaction.writeData(data); manually save transactions into the csv files
-    }
-    
-    public void BuildUsers(){
+    private void BuildUsers(){
          try { 
             users = new HashMap<>();
             Scanner file = new Scanner(new File("DataSample" + File.separator + "UserCSV.txt"));
 
-            // FIrst line of dat file is column headers.  Skips line 1 so that
+            // First line of pre load file is column headers.  Skips line 1 so that
             // data is read beginnng with line 2
             file.nextLine();
 
@@ -69,22 +40,22 @@ public class DataFactory {
                 String password = line.next();
                 double credit = 0;
                 double debt = 0;
-                ArrayList<Transaction> transactions = new ArrayList<>();
-                User user = new User(username, displayName, password, credit, debt, transactions);
+                ArrayList<Transaction> userTransactions = new ArrayList<>();
+                User user = new User(username, displayName, password, credit, debt, userTransactions);
                 users.put(password, user);
             }
          }
         catch (FileNotFoundException ex) {
-            System.out.println("ERROR: Badges dat file not found");
+            System.out.println("ERROR: Users TXT file not found");
         }
     }
 
 
-    public void BuildTransactions() throws IOException {
+    private void BuildTransactions() {
         try{
-            transactions = new ArrayList<Transaction>();
+            transactions = new ArrayList<>();
             Scanner file = new Scanner(new File("DataSample" + File.separator + "TransactionCSV.txt"));
-            // FIrst line of dat file is column headers.  Skips line 1 so that
+            // First line of pre load file is column headers.  Skips line 1 so that
             // data is read beginnng with line 2
             file.nextLine();
             while(file.hasNextLine()){
@@ -107,7 +78,7 @@ public class DataFactory {
             }
         }
         catch (FileNotFoundException ex) {
-            System.out.println("ERROR: Badges dat file not found");
+            System.out.println("ERROR: Transactions TXT file not found");
         }
     }
     
