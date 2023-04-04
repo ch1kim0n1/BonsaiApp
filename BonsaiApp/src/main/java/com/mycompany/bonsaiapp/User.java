@@ -24,22 +24,29 @@ public class User {
     private String password;
     private double credit;
     private double debt;
-    private ArrayList<Transaction> transactions;
+    private ArrayList<Transaction> userTransactions;
+    private ArrayList<Transaction> reducedTransactions;
+    private ArrayList<Transaction> dueTransactions;
+    private ArrayList<Transaction> doneTransactions;
 
-    public User(String userName, String displayName, String password,double credit, double debt, ArrayList<Transaction> t) {
+    public User(String userName, String displayName, String password,double credit, double debt, ArrayList<Transaction> ut,
+                ArrayList<Transaction> rt, ArrayList<Transaction> dueT, ArrayList<Transaction> doneT) {
         this.userName = userName;
         this.displayName = displayName;
         this.password = password;
         this.credit = credit;
         this.debt = debt;
-        this.transactions = new ArrayList<>();
+        this.userTransactions = ut;
+        this.reducedTransactions = rt;
+        this.dueTransactions = dueT;
+        this.doneTransactions = doneT;
     }
 
-    public String getName() {
+    public String getUserName() {
         return userName;
     }
 
-    public void setName(String name) {
+    public void setUserName(String name) {
         this.userName = name;
     }
 
@@ -74,4 +81,33 @@ public class User {
     public void setDebt(double debt) {
         this.debt = debt;
     }
+
+    public ArrayList<Transaction> getReducedTransactions() {
+        return reducedTransactions;
+    }
+
+    public ArrayList<Transaction> getDueTransactions() {
+        return dueTransactions;
+    }
+
+    public ArrayList<Transaction> getDoneTransactions() {
+        return doneTransactions;
+    }
+
+    public void setUserTransactions(ArrayList<Transaction> userTransactions) {
+        this.userTransactions = userTransactions;
+    }
+
+    public void setReducedTransactions(ArrayList<Transaction> reducedTransactions) {
+        this.reducedTransactions = reducedTransactions;
+    }
+
+    public void setDueTransactions(ArrayList<Transaction> dueTransactions) {
+        this.dueTransactions = dueTransactions;
+    }
+
+    public void setDoneTransactions(ArrayList<Transaction> doneTransactions) {
+        this.doneTransactions = doneTransactions;
+    }
+    
 }
