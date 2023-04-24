@@ -24,11 +24,12 @@ public class DebtSimplification {
         name = user.getUserName();
         
         buildUserTransactions();
+        buildReducedTransactions();
         buildDueTransactions();
         buildDoneTransactions();
         
         u.setUserTransactions(userTransactions);
-        u.setReducedTransactions(reducedTransactions);
+        //u.setReducedTransactions(reducedTransactions);
         u.setDueTransactions(dueTransactions);
         u.setDoneTransactions(doneTransactions);
         
@@ -45,15 +46,27 @@ public class DebtSimplification {
         }
     }
     
-    /*private void buildReducedTransactions() {
-        String name = user.getName();
+    private void buildReducedTransactions() {
+        //This method will create the arraylist for the dashboard.
+        //This is the starting list that shows compiled dues, reducing debts between 2 users
+        //and stacking debts as well.
+        
+        //process starts by filtering all incomplete transactions
+        ArrayList<Transaction> iuTransactions = new ArrayList<>();
         
         for(Transaction t : userTransactions) {
+            if (!t.isDone())
+                iuTransactions.add(t);
         }
-    }*/
+        
+        for(Transaction h : iuTransactions) {
+            
+        }
+    }
     
     private void buildDueTransactions() {
-        
+        //finds all transactions that are not done, and require the user
+        //to make a payment
         for (Transaction t : allTransactions) {
             if(t.getUserNameFrom().equals(name) &&
                t.getTransactionType().equals("Owe") &&
@@ -68,6 +81,7 @@ public class DebtSimplification {
     }
     
     private void buildDoneTransactions() {
+        //iterates through all transactions relating to the user, finding any complete ones
         for (Transaction t : userTransactions) {
             if(t.isDone() && t.getUserNameFrom().equals(name))
                 doneTransactions.add(t);
