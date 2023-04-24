@@ -12,8 +12,8 @@ import java.util.Scanner;
 
 public class DataFactory implements Serializable{
     
-    private HashMap<String, User> users;
-    private ArrayList<Transaction> transactions;
+    public HashMap<String, User> users;
+    public ArrayList<Transaction> transactions;
 
     public DataFactory() {
         BuildUsers();

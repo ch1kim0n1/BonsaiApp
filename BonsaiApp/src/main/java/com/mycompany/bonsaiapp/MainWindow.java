@@ -6,9 +6,13 @@ package com.mycompany.bonsaiapp;
 
 import java.awt.event.ActionEvent;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.HashMap;
 import java.util.Scanner;
 import java.util.TreeSet;
 import java.util.logging.Level;
@@ -21,13 +25,23 @@ import javax.swing.table.DefaultTableModel;
  * @author skyla
  */
 public class MainWindow extends javax.swing.JFrame {
+    
+    private String currentFile;    //the save location for the program
+    private HashMap<String, User> user;
+    private HashMap<String, Transaction> transaction;
 
     /**
      * Creates new form MainWindow
      */
     public MainWindow() {
         initComponents();
-        StartConfigs();
+        StartConfigs(); 
+        currentFile = getCurrentFileLocation();
+        BonsaiManagerModel data = readModel();
+        //user = data.user();
+        //transaction = data.transaction();
+        
+        
        
         
         //test out and see if this will change our GUI
@@ -105,6 +119,10 @@ public class MainWindow extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("loginWindow");
+        setMaximumSize(new java.awt.Dimension(400, 900));
+        setResizable(false);
+
+        LoginWindow.setDoubleBuffered(false);
 
         loginWindow_label_username.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
         loginWindow_label_username.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -153,10 +171,10 @@ public class MainWindow extends javax.swing.JFrame {
                     .addGroup(LoginWindowLayout.createSequentialGroup()
                         .addGap(211, 211, 211)
                         .addComponent(jLabel1)
-                        .addGap(0, 211, Short.MAX_VALUE)))
+                        .addGap(0, 443, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LoginWindowLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addGap(0, 403, Short.MAX_VALUE)
                 .addGroup(LoginWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(loginWindow_Button_newUser, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(loginWindow_button_enter, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -179,8 +197,10 @@ public class MainWindow extends javax.swing.JFrame {
                 .addComponent(loginWindow_button_enter)
                 .addGap(35, 35, 35)
                 .addComponent(loginWindow_Button_newUser, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(387, Short.MAX_VALUE))
+                .addContainerGap(800, Short.MAX_VALUE))
         );
+
+        MainWindow.setEnabled(false);
 
         MainWindow_ToggleB_Dashboard.setText("Dashboard");
         MainWindow_ToggleB_Dashboard.addActionListener(new java.awt.event.ActionListener() {
@@ -452,6 +472,8 @@ public class MainWindow extends javax.swing.JFrame {
                     .addComponent(MainWindow_ToggleB_History, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
+        RegistrationWindow.setEnabled(false);
+
         jLabel2.setText("New User Registration");
 
         jButton2.setText("Register");
@@ -508,7 +530,7 @@ public class MainWindow extends javax.swing.JFrame {
                     .addGroup(RegistrationWindowLayout.createSequentialGroup()
                         .addGap(199, 199, 199)
                         .addComponent(jLabel6)))
-                .addContainerGap(78, Short.MAX_VALUE))
+                .addContainerGap(310, Short.MAX_VALUE))
         );
         RegistrationWindowLayout.setVerticalGroup(
             RegistrationWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -535,7 +557,7 @@ public class MainWindow extends javax.swing.JFrame {
                 .addGap(92, 92, 92)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 587, Short.MAX_VALUE)
                 .addGap(38, 38, 38)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28))
@@ -687,42 +709,31 @@ public class MainWindow extends javax.swing.JFrame {
         return null;
     }
     
-//    private void buildLogsTable(TreeSet<LogEntry> logs) {
-//
-//        if (logs == null || logs.size() == 0) {
-//            return;
-//        }
-//        
-//        Object[][] data = new Object[logs.size()][2];
-//        String[] columnHeaders = {"Time Stamp", "Employee"};
-//     
-//        int row = 0;
-//        
-//        for (LogEntry log : logs) {
-//            GregorianCalendar open = log.getTimeStamp();
-//            String am_pm = (open.get(Calendar.AM_PM) == 0) ? "am" : "pm";
-//            int hour = (open.get(Calendar.HOUR)==0)? 12 : open.get(Calendar.HOUR);
-//            String minute = (open.get(Calendar.MINUTE) < 10)? "0"+open.get(Calendar.MINUTE) : ""+open.get(Calendar.MINUTE);
-//            String opFormatted = "" + hour+ ":" + minute + " " + am_pm ; 
-//            data[row][0] = opFormatted;
-//            int id = log.getEmployeeID();
-//            
-//            String name = id + " - " + badges.get(id).getName();
-//            name = name.substring(1, name.length()-1);
-//            name = name.substring(0,8) + name.substring(9);
-//            //name = name.substring(8,9);
-//            data[row][1] = name; 
-//            
-//            
-//            
-//            row++;
-//            
-//        }
-//        
-//        DefaultTableModel dfm = (DefaultTableModel)doors_table_log.getModel();
-//        dfm.setDataVector(data, columnHeaders);
-//    
-//    }
+    private BonsaiManagerModel readModel() {
+        
+        BonsaiManagerModel dmm = null;
+        
+        try {
+            
+            FileInputStream     fis = new FileInputStream(new File(currentFile));
+            ObjectInputStream   ois = new ObjectInputStream(fis);
+            
+            dmm = (BonsaiManagerModel)ois.readObject();
+            fis.close();
+            
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return dmm;
+    }
+    
+    //build data for table
+    //builf users and their info
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel LoginWindow;
