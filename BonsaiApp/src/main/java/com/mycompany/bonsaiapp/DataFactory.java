@@ -3,9 +3,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.bonsaiapp;
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.Serializable;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
@@ -15,15 +19,24 @@ public class DataFactory implements Serializable{
     public HashMap<String, User> users;
     public ArrayList<Transaction> transactions;
 
+    
+    Path pathU = Paths.get("UserCSV.txt");
+    Path pathT = Path.of("TransactionCSV.txt");
+
     public DataFactory() {
         BuildUsers();
         BuildTransactions();
     }
     
+    public String getPath(){
+        return pathU + " " + pathT;
+    }
+    
     private void BuildUsers(){
          try { 
             users = new HashMap<>();
-            Scanner file = new Scanner(new File("DataSample" + File.separator + "UserCSV.txt"));
+            
+            Scanner file = new Scanner(new File(pathU.toAbsolutePath() + ""));
 
             // First line of pre load file is column headers.  Skips line 1 so that
             // data is read beginnng with line 2
@@ -59,7 +72,8 @@ public class DataFactory implements Serializable{
     private void BuildTransactions() {
         try{
             transactions = new ArrayList<>();
-            Scanner file = new Scanner(new File("DataSample" + File.separator + "TransactionCSV.txt"));
+            
+            Scanner file = new Scanner(new File(pathT.toAbsolutePath() + ""));
             // First line of pre load file is column headers.  Skips line 1 so that
             // data is read beginnng with line 2
             file.nextLine();

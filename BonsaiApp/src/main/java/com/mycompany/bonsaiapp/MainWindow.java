@@ -10,6 +10,8 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.nio.file.Path;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
@@ -26,9 +28,8 @@ import javax.swing.table.DefaultTableModel;
  */
 public class MainWindow extends javax.swing.JFrame {
     
-    private String currentFile;    //the save location for the program
-    private HashMap<String, User> user;
-    private HashMap<String, Transaction> transaction;
+    private HashMap<String, User> users;
+    private ArrayList<Transaction> transactions;
 
     /**
      * Creates new form MainWindow
@@ -36,21 +37,22 @@ public class MainWindow extends javax.swing.JFrame {
     public MainWindow() {
         initComponents();
         StartConfigs(); 
-        currentFile = getCurrentFileLocation();
-        BonsaiManagerModel data = readModel();
+        
+        DataFactory df = new DataFactory();
+        //BonsaiManagerModel data = readModel();
         //user = data.user();
         //transaction = data.transaction();
         
+        BonsaiManagerModel data = df.getModel();
+        users = data.user;
+        transactions = data.transaction;
         
-       
+        //NOT WORKING YET, CANNOT GET THE USER YET
+        User x = users.get("alejdiaz");
         
-        //test out and see if this will change our GUI
-        try{
-        UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.MacintoshLookAndFeel");
-        }
-        catch(Exception e){
-        System.out.println("UIManager Exception : "+e);
-        }
+        System.out.println(x); //test if see if its work
+        System.out.println(transactions);
+        
     }
 
     /**
@@ -61,6 +63,7 @@ public class MainWindow extends javax.swing.JFrame {
     
     private void StartConfigs(){
         MainWindow.setVisible(false);
+        longWindow_label_wornglogin.setVisible(false);
         RegistrationWindow.setVisible(false);
         LoginWindow.setVisible(true);
     }
@@ -76,6 +79,7 @@ public class MainWindow extends javax.swing.JFrame {
         loginWindow_button_enter = new javax.swing.JButton();
         loginWindow_Button_newUser = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        longWindow_label_wornglogin = new javax.swing.JLabel();
         MainWindow = new javax.swing.JPanel();
         MainWindow_ToggleB_Dashboard = new javax.swing.JToggleButton();
         MainWindow_ToggleB_Dues = new javax.swing.JToggleButton();
@@ -156,6 +160,10 @@ public class MainWindow extends javax.swing.JFrame {
 
         jLabel1.setText("Bonsai App");
 
+        longWindow_label_wornglogin.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        longWindow_label_wornglogin.setForeground(new java.awt.Color(255, 0, 0));
+        longWindow_label_wornglogin.setText("Wrong password/username, try again");
+
         javax.swing.GroupLayout LoginWindowLayout = new javax.swing.GroupLayout(LoginWindow);
         LoginWindow.setLayout(LoginWindowLayout);
         LoginWindowLayout.setHorizontalGroup(
@@ -167,25 +175,30 @@ public class MainWindow extends javax.swing.JFrame {
                         .addComponent(loginWindow_label_password, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(loginWindow_label_username, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(loginWindow_textField_username)
-                    .addComponent(loginWindow_textField_password)
-                    .addGroup(LoginWindowLayout.createSequentialGroup()
-                        .addGap(211, 211, 211)
-                        .addComponent(jLabel1)
-                        .addGap(0, 443, Short.MAX_VALUE)))
+                    .addComponent(loginWindow_textField_password))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LoginWindowLayout.createSequentialGroup()
-                .addGap(0, 403, Short.MAX_VALUE)
-                .addGroup(LoginWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(loginWindow_Button_newUser, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(loginWindow_button_enter, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(202, 202, 202))
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(LoginWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LoginWindowLayout.createSequentialGroup()
+                        .addGroup(LoginWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(loginWindow_Button_newUser, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(loginWindow_button_enter, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(202, 202, 202))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LoginWindowLayout.createSequentialGroup()
+                        .addComponent(longWindow_label_wornglogin)
+                        .addGap(194, 194, 194))))
+            .addGroup(LoginWindowLayout.createSequentialGroup()
+                .addGap(324, 324, 324)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         LoginWindowLayout.setVerticalGroup(
             LoginWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(LoginWindowLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(50, 50, 50)
                 .addComponent(jLabel1)
-                .addGap(177, 177, 177)
+                .addGap(133, 133, 133)
                 .addComponent(loginWindow_label_username)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(loginWindow_textField_username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -197,7 +210,9 @@ public class MainWindow extends javax.swing.JFrame {
                 .addComponent(loginWindow_button_enter)
                 .addGap(35, 35, 35)
                 .addComponent(loginWindow_Button_newUser, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(800, Short.MAX_VALUE))
+                .addGap(42, 42, 42)
+                .addComponent(longWindow_label_wornglogin, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(87, Short.MAX_VALUE))
         );
 
         MainWindow.setEnabled(false);
@@ -530,7 +545,7 @@ public class MainWindow extends javax.swing.JFrame {
                     .addGroup(RegistrationWindowLayout.createSequentialGroup()
                         .addGap(199, 199, 199)
                         .addComponent(jLabel6)))
-                .addContainerGap(310, Short.MAX_VALUE))
+                .addContainerGap(74, Short.MAX_VALUE))
         );
         RegistrationWindowLayout.setVerticalGroup(
             RegistrationWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -557,7 +572,7 @@ public class MainWindow extends javax.swing.JFrame {
                 .addGap(92, 92, 92)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 587, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 109, Short.MAX_VALUE)
                 .addGap(38, 38, 38)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28))
@@ -567,26 +582,36 @@ public class MainWindow extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(LoginWindow, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(RegistrationWindow, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(LoginWindow, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(75, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addGap(196, 196, 196)
+                    .addComponent(RegistrationWindow, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 107, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addContainerGap()
                     .addComponent(MainWindow, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addContainerGap(67, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(LoginWindow, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(RegistrationWindow, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(LoginWindow, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(132, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addGap(395, 395, 395)
-                    .addComponent(MainWindow, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(RegistrationWindow, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(MainWindow, javax.swing.GroupLayout.PREFERRED_SIZE, 789, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(41, Short.MAX_VALUE)))
         );
+
+        LoginWindow.getAccessibleContext().setAccessibleDescription("");
 
         getAccessibleContext().setAccessibleDescription("");
 
@@ -646,6 +671,7 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void loginWindow_button_enterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginWindow_button_enterActionPerformed
         //Add logic so that it checks password before you login
+        
         MainWindow.setVisible(true);
         MainWindow_Panel_Holder.setVisible(true);
         MainWindow_Panel_Dashboard.setVisible(true);
@@ -694,42 +720,9 @@ public class MainWindow extends javax.swing.JFrame {
         });
     }
     
-    private String getCurrentFileLocation() {
-
-        try
-        {
-        Scanner file = new Scanner(new File("preferences.txt"));
-        return file.nextLine();
-        }
-
-        catch(FileNotFoundException ex)
-        {
-            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return null;
-    }
     
-    private BonsaiManagerModel readModel() {
-        
-        BonsaiManagerModel dmm = null;
-        
-        try {
-            
-            FileInputStream     fis = new FileInputStream(new File(currentFile));
-            ObjectInputStream   ois = new ObjectInputStream(fis);
-            
-            dmm = (BonsaiManagerModel)ois.readObject();
-            fis.close();
-            
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        return dmm;
+    public BonsaiManagerModel getModel(){      
+        return new BonsaiManagerModel(users, transactions); //its actually arraylist
     }
     
     //build data for table
@@ -784,5 +777,6 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JLabel loginWindow_label_username;
     private javax.swing.JTextField loginWindow_textField_password;
     private javax.swing.JTextField loginWindow_textField_username;
+    private javax.swing.JLabel longWindow_label_wornglogin;
     // End of variables declaration//GEN-END:variables
 }
