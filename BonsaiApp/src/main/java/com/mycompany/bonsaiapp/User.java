@@ -41,6 +41,18 @@ public class User {
         this.dueTransactions = dueT;
         this.doneTransactions = doneT;
     }
+    
+    public User(String userName, String displayName, String password) {
+        this.userName = userName;
+        this.displayName = displayName;
+        this.password = password;
+        this.debt = 0;
+        this.credit = 0;
+        this.userTransactions = null;
+        this.reducedTransactions = null;
+        this.dueTransactions = null;
+        this.doneTransactions = null;
+    }
 
     public String getUserName() {
         return userName;

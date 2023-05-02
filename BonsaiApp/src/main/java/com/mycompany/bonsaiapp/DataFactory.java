@@ -41,10 +41,6 @@ public class DataFactory implements Serializable{
             // First line of pre load file is column headers.  Skips line 1 so that
             // data is read beginnng with line 2
             file.nextLine();
-            
-            ArrayList<Transaction> reduced  = new ArrayList<>();
-            ArrayList<Transaction> due      = new ArrayList<>();
-            ArrayList<Transaction> done     = new ArrayList<>();
 
             while (file.hasNextLine()) {
                 String lineData = file.nextLine();
@@ -55,12 +51,8 @@ public class DataFactory implements Serializable{
                 String username = line.next();
                 String displayName = line.next();
                 String password = line.next();
-                double credit = 0;
-                double debt = 0;
-                ArrayList<Transaction> userTransactions = new ArrayList<>();
-                User user = new User(username, displayName, password, credit, debt, userTransactions,
-                            reduced, due , done);
-                users.put(password, user);
+                User user = new User(username, displayName, password);
+                users.put(username, user);
             }
          }
         catch (FileNotFoundException ex) {
