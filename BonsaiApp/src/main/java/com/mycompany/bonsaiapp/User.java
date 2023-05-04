@@ -10,15 +10,13 @@ import java.util.ArrayList;
  *
  * @author alejandrodiaz
  */
-
 public class User {
     //The most important class of all, this class will store and will be able to change info about users
     // as their name, display name, password, and etc.
     //This class will be able to change values of dept and creadit towards other users
     //This class also will be able to store the Transaction list of the persons transactions(Accessable by key of his username)
-    
+
     //TODO: delete some setters
-    
     private String userName;
     private String displayName;
     private String password;
@@ -29,8 +27,8 @@ public class User {
     private ArrayList<Transaction> dueTransactions;
     private ArrayList<Transaction> doneTransactions;
 
-    public User(String userName, String displayName, String password,double credit, double debt, ArrayList<Transaction> ut,
-                ArrayList<Transaction> rt, ArrayList<Transaction> dueT, ArrayList<Transaction> doneT) {
+    public User(String userName, String displayName, String password, double credit, double debt, ArrayList<Transaction> ut,
+            ArrayList<Transaction> rt, ArrayList<Transaction> dueT, ArrayList<Transaction> doneT) {
         this.userName = userName;
         this.displayName = displayName;
         this.password = password;
@@ -41,7 +39,7 @@ public class User {
         this.dueTransactions = dueT;
         this.doneTransactions = doneT;
     }
-    
+
     public User(String userName, String displayName, String password) {
         this.userName = userName;
         this.displayName = displayName;
@@ -121,5 +119,5 @@ public class User {
     public void setDoneTransactions(ArrayList<Transaction> doneTransactions) {
         this.doneTransactions = doneTransactions;
     }
-    
+
 }
