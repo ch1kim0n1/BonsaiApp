@@ -12,7 +12,7 @@ public class DebtSimplification {
     private String name;
     private ArrayList<Transaction> allTransactions;
     private ArrayList<Transaction> userTransactions;
-    private ArrayList<Transaction> reducedTransactions;
+    //private ArrayList<ReducedTransaction> reducedTransactions;
     private ArrayList<Transaction> dueTransactions;
     private ArrayList<Transaction> doneTransactions;
 
@@ -25,7 +25,7 @@ public class DebtSimplification {
         name = user.getUserName();
 
         buildUserTransactions();
-        buildReducedTransactions();
+        //buildReducedTransactions();
         buildDueTransactions();
         buildDoneTransactions();
 
@@ -49,7 +49,7 @@ public class DebtSimplification {
         }
     }
 
-    private void buildReducedTransactions() {
+    /*private void buildReducedTransactions() {
         //This method will create the arraylist for the dashboard.
         //This is the starting list that shows compiled dues, reducing debts between 2 users
         //and stacking debts as well.
@@ -62,16 +62,27 @@ public class DebtSimplification {
                 iuTransactions.add(t);
             }
         }
-
+        
+        //process creates custom transactions that exist only within the reduced transactions
+        //arraylist.
         for (Transaction h : iuTransactions) {
-
+            for (ReducedTransaction j : reducedTransactions) {
+                if(h.getUserNameTo().equals(j.getUserName())
+                   && h.getTransactionType().equals("Owe")) {
+                    j.setAmount(j.getAmount() - h.getAmount());
+                }
+                else if (h.getUserNameTo().equals(j.getUserName())
+                        && h.getTransactionType().equals("Request")) {
+                    j.setAmount(j.getAmount() + h.getAmount());
+                } 
         }
-    }
+    }*/
 
     private void buildDueTransactions() {
         //finds all transactions that are not done, and require the user
         //to make a payment
-        for (Transaction t : allTransactions) {
+        
+        for (Transaction t : userTransactions) {
             if (t.getUserNameFrom().equals(name)
                     && t.getTransactionType().equals("Owe")
                     && !t.isDone()) {
