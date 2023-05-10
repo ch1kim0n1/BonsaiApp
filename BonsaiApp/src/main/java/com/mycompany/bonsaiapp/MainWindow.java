@@ -37,7 +37,7 @@ public class MainWindow extends javax.swing.JFrame {
         jTextArea1.setText(data);
         
         
-        //----------------------test---------------------
+        //----------------------------------test---------------------------------------------
         
 //        //later on we need to get data from csv to automatically add to the chart
 //        DebtAndGainChart chart = new DebtAndGainChart();
@@ -1196,9 +1196,26 @@ public class MainWindow extends javax.swing.JFrame {
 
         return sb.toString();
     }
-
+    
+    //ALL # CLASSES NEED TO BE CALLED AT THE VERY BEGINNING
+    public void buildDashboardTable(){
+        //this class will build a table for the dashboard by taking all the tranaction data and inputing it into the table. 
+        //showign total balance with + and -
+        //Need to run again as soon as we create new due or request
+    }
+    
+    public void buildDuesTable(){
+        //takes only due data and showign it up with the total amount due
+        //called when new due is created, it is going to update the due chart only
+    }
+    
+    public void buildHistorytable(){
+        //takes all of the tranasction data and retireves all info to display as reason, from, and to whom
+        //updates only history table
+        //called every time there is new due or request is added
+    }
     //build data for table
-    //builf users and their info
+    //build users and their info
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel LoginWindow;
