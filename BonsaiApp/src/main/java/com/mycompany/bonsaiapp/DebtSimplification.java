@@ -23,6 +23,10 @@ public class DebtSimplification {
         user = u;
         allTransactions = t;
         name = user.getUserName();
+       
+        userTransactions = new ArrayList<>();
+        dueTransactions = new ArrayList<>();
+        doneTransactions = new ArrayList<>();        
 
         buildUserTransactions();
         //buildReducedTransactions();
@@ -33,7 +37,7 @@ public class DebtSimplification {
         //u.setReducedTransactions(reducedTransactions);
         u.setDueTransactions(dueTransactions);
         u.setDoneTransactions(doneTransactions);
-
+        
     }
 
     private void buildUserTransactions() {

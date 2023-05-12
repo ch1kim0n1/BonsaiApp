@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author skyla
@@ -18,7 +19,8 @@ public class MainWindow extends javax.swing.JFrame {
 
     private HashMap<String, User> users;
     private ArrayList<Transaction> transactions;
-    private DataFactory dataFactory;
+    private DataFactory dataFactory = new DataFactory();
+    private User userLogged;
 
     /**
      * Creates new form MainWindow
@@ -29,9 +31,11 @@ public class MainWindow extends javax.swing.JFrame {
 
         //DataFactory df = new DataFactory();
         //change data type to string
-        // Get the data from the DataFactory class
-        DataFactory dataFactory2 = new DataFactory();
-        String data = displayData(dataFactory2);
+        // Get the data from the DataFactory classs
+        users = dataFactory.users;
+        transactions = dataFactory.transactions;
+        
+        String data = displayData();
 
         // Display the data in the jTextPane1 text field
         jTextArea1.setText(data);
@@ -317,11 +321,23 @@ public class MainWindow extends javax.swing.JFrame {
         Main_Dashboard_Text_Money1.setForeground(new java.awt.Color(255, 51, 51));
         Main_Dashboard_Text_Money1.setText("Money NUM HERE");
 
+        jTable4.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Name + Reason", "Type", "Amount", "Done?"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, true, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         Main_Dashboard_Table_Data3.setViewportView(jTable4);
-        if (jTable4.getColumnModel().getColumnCount() > 0) {
-            jTable4.getColumnModel().getColumn(0).setHeaderValue("Name + Reason");
-            jTable4.getColumnModel().getColumn(1).setHeaderValue("Amount");
-        }
 
         Main_Dashboard_Button_Request1.setText("Request");
         Main_Dashboard_Button_Request1.addActionListener(new java.awt.event.ActionListener() {
@@ -614,18 +630,8 @@ public class MainWindow extends javax.swing.JFrame {
         MainWindow_Panel_Dues.setLayout(MainWindow_Panel_DuesLayout);
         MainWindow_Panel_DuesLayout.setHorizontalGroup(
             MainWindow_Panel_DuesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(MainWindow_Panel_DuesLayout.createSequentialGroup()
-                .addGroup(MainWindow_Panel_DuesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(MainWindow_Panel_DuesLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(Main_Dashboard_Table_Data1, javax.swing.GroupLayout.DEFAULT_SIZE, 481, Short.MAX_VALUE))
-                    .addGroup(MainWindow_Panel_DuesLayout.createSequentialGroup()
-                        .addGap(213, 213, 213)
-                        .addComponent(jLabel7)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainWindow_Panel_DuesLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addGap(0, 155, Short.MAX_VALUE)
                 .addGroup(MainWindow_Panel_DuesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainWindow_Panel_DuesLayout.createSequentialGroup()
                         .addComponent(jLabel8)
@@ -633,6 +639,15 @@ public class MainWindow extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainWindow_Panel_DuesLayout.createSequentialGroup()
                         .addComponent(jButton4)
                         .addContainerGap())))
+            .addGroup(MainWindow_Panel_DuesLayout.createSequentialGroup()
+                .addGroup(MainWindow_Panel_DuesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(MainWindow_Panel_DuesLayout.createSequentialGroup()
+                        .addGap(213, 213, 213)
+                        .addComponent(jLabel7))
+                    .addGroup(MainWindow_Panel_DuesLayout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addComponent(Main_Dashboard_Table_Data1, javax.swing.GroupLayout.PREFERRED_SIZE, 461, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         MainWindow_Panel_DuesLayout.setVerticalGroup(
             MainWindow_Panel_DuesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -643,8 +658,8 @@ public class MainWindow extends javax.swing.JFrame {
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Main_Dashboard_Table_Data1, javax.swing.GroupLayout.PREFERRED_SIZE, 554, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(Main_Dashboard_Table_Data1, javax.swing.GroupLayout.PREFERRED_SIZE, 542, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28))
         );
 
@@ -933,7 +948,7 @@ public class MainWindow extends javax.swing.JFrame {
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
                     .addComponent(MainWindow, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(45, Short.MAX_VALUE)))
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         LoginWindow.getAccessibleContext().setAccessibleDescription("");
@@ -1013,9 +1028,6 @@ public class MainWindow extends javax.swing.JFrame {
     String username = loginWindow_textField_username.getText();
     String password = loginWindow_textField_password.getText();
 
-    // Create an instance of the DataFactory class
-    DataFactory dataFactory = new DataFactory();
-
     // Get the username list from DataFactory
     List<String> usernames = dataFactory.getUsernames();
 
@@ -1033,6 +1045,14 @@ public class MainWindow extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null, "Invalid password");
         return;
     }
+    
+    userLogged = user;
+    DebtSimplification ds = new DebtSimplification(userLogged, transactions);
+    //System.out.println(userLogged.getUserTransactions());
+    
+    buildDashboardTable();
+    buildDuesTable();
+    buildHistorytable();
 
     // Login the user
     MainWindow.setVisible(true);
@@ -1179,10 +1199,8 @@ public class MainWindow extends javax.swing.JFrame {
         return new BonsaiManagerModel(users, transactions); //its actually arraylist
     }
 
-    private String displayData(DataFactory dataFactory) {
+    private String displayData() {
         StringBuilder sb = new StringBuilder();
-        HashMap<String, User> users = dataFactory.users;
-        ArrayList<Transaction> transactions = dataFactory.transactions;
 
         sb.append("USERS:\n");
         for (User user : users.values()) {
@@ -1202,11 +1220,56 @@ public class MainWindow extends javax.swing.JFrame {
         //this class will build a table for the dashboard by taking all the tranaction data and inputing it into the table. 
         //showign total balance with + and -
         //Need to run again as soon as we create new due or request
+        
+        ArrayList<Transaction> UserTransaction = userLogged.getUserTransactions();
+        
+        if(UserTransaction == null){
+            return;
+        }
+        
+        Object[][] data = new Object[UserTransaction.size()][4];
+        String[] headers = {"Name + Reason", "Type", "Amount", "Done?"};
+        
+        int row = 0;
+        
+        for(Transaction t : UserTransaction){
+            String displayName = users.get(t.getUserNameFrom()).getDisplayName();
+            data[row][0] = displayName + ", " + t.getReason();
+            data[row][1] = t.getTransactionType();
+            data[row][2] = t.getAmount();
+            data[row][3] = t.isDone();
+            row++;
+        }
+        
+        DefaultTableModel dfm = (DefaultTableModel)jTable4.getModel();
+        dfm.setDataVector(data, headers);
     }
     
     public void buildDuesTable(){
         //takes only due data and showign it up with the total amount due
         //called when new due is created, it is going to update the due chart only
+        
+        ArrayList<Transaction> DueTransaction = userLogged.getDueTransactions();
+        System.out.println(DueTransaction);
+        
+        if(DueTransaction == null){
+            return;
+        }
+        
+        Object[][] data = new Object[DueTransaction.size()][2];
+        String[] headers = {"Name + Reason", "Amount"};
+        
+        int row = 0;
+        
+        for(Transaction t : DueTransaction){
+            String displayName = users.get(t.getUserNameFrom()).getDisplayName();
+            data[row][0] = displayName + ", " + t.getReason();
+            data[row][1] = t.getAmount();
+            row++;
+        }
+        
+        DefaultTableModel dfm = (DefaultTableModel)jTable2.getModel();
+        dfm.setDataVector(data, headers);
     }
     
     public void buildHistorytable(){

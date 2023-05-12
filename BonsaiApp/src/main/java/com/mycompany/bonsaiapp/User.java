@@ -107,6 +107,9 @@ public class User {
     public void setUserTransactions(ArrayList<Transaction> userTransactions) {
         this.userTransactions = userTransactions;
     }
+    public ArrayList<Transaction> getUserTransactions(){
+        return userTransactions;
+    }
 
     public void setReducedTransactions(ArrayList<Transaction> reducedTransactions) {
         this.reducedTransactions = reducedTransactions;
