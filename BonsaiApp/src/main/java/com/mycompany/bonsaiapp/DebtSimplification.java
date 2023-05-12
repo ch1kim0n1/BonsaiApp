@@ -88,11 +88,11 @@ public class DebtSimplification {
         
         for (Transaction t : userTransactions) {
             if (t.getUserNameFrom().equals(name)
-                    && t.getTransactionType().equals("Owe")
+                    && t.getTransactionType().equals("owe")
                     && !t.isDone()) {
                 dueTransactions.add(t);
             } else if (t.getUserNameTo().equals(name)
-                    && t.getTransactionType().equals("Request")
+                    && t.getTransactionType().equals("request")
                     && !t.isDone()) {
                 dueTransactions.add(t);
             }

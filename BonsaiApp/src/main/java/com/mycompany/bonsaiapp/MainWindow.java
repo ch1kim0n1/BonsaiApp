@@ -666,11 +666,15 @@ public class MainWindow extends javax.swing.JFrame {
         MainWindow_Panel_History.setBackground(new java.awt.Color(102, 102, 102));
         MainWindow_Panel_History.setMaximumSize(new java.awt.Dimension(518, 823));
 
+        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Name + Reason", "Type", "Amount"
+            }
+        ));
         Main_Dashboard_Table_Data2.setViewportView(jTable3);
-        if (jTable3.getColumnModel().getColumnCount() > 0) {
-            jTable3.getColumnModel().getColumn(0).setHeaderValue("Name + Reason");
-            jTable3.getColumnModel().getColumn(1).setHeaderValue("Amount");
-        }
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(242, 242, 242));
@@ -1276,6 +1280,28 @@ public class MainWindow extends javax.swing.JFrame {
         //takes all of the tranasction data and retireves all info to display as reason, from, and to whom
         //updates only history table
         //called every time there is new due or request is added
+        
+        ArrayList<Transaction> DoneTransaction = userLogged.getDoneTransactions();
+        
+        if(DoneTransaction == null){
+            return;
+        }
+        
+        Object[][] data = new Object[DoneTransaction.size()][3];
+        String[] headers = {"Name + Reason", "Type", "Amount"};
+        
+        int row = 0;
+        
+        for(Transaction t : DoneTransaction){
+            String displayName = users.get(t.getUserNameFrom()).getDisplayName();
+            data[row][0] = displayName + ", " + t.getReason();
+            data[row][1] = t.getTransactionType();
+            data[row][2] = t.getAmount();
+            row++;
+        }
+        
+        DefaultTableModel dfm = (DefaultTableModel)jTable3.getModel();
+        dfm.setDataVector(data, headers);
     }
     //build data for table
     //build users and their info
