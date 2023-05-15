@@ -55,15 +55,13 @@ public class DebtSimplification {
     
      private void UpdateUserTransactions(Transaction t) {
         //this method will filter all Bonsai transactions to only the user's transactions
+        if (t.getUserNameFrom().equals(name)) {
+            userTransactions.add(t);
+        }
+        else if (t.getUserNameTo().equals(name)) {
+            userTransactions.add(t);
+        }
 
-
-            if (t.getUserNameFrom().equals(name)) {
-                userTransactions.add(t);
-            }
-            if (t.getUserNameTo().equals(name)) {
-                userTransactions.add(t);
-            }
-     
     }
 
     /*private void buildReducedTransactions() {
@@ -110,6 +108,22 @@ public class DebtSimplification {
                 dueTransactions.add(t);
             }
         }
+    }
+    
+    private void UpdateDueTransactions(Transaction t) {
+        //finds all transactions that are not done, and require the user
+        //to make a payment
+
+        if (t.getUserNameFrom().equals(name)
+                && t.getTransactionType().equals("owe")
+                && !t.isDone()) {
+            dueTransactions.add(t);
+        } else if (t.getUserNameTo().equals(name)
+                && t.getTransactionType().equals("request")
+                && !t.isDone()) {
+            dueTransactions.add(t);
+        }
+        
     }
 
     private void buildDoneTransactions() {

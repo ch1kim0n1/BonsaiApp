@@ -318,7 +318,7 @@ public class MainWindow extends javax.swing.JFrame {
         Main_Dashboard_Text_ExpectedProfits1.setToolTipText("");
 
         Main_Dashboard_Text_Money1.setFont(new java.awt.Font("Segoe UI Semibold", 2, 36)); // NOI18N
-        Main_Dashboard_Text_Money1.setForeground(new java.awt.Color(255, 51, 51));
+        Main_Dashboard_Text_Money1.setForeground(new java.awt.Color(0, 153, 0));
         Main_Dashboard_Text_Money1.setText("Money NUM HERE");
 
         jTable4.setModel(new javax.swing.table.DefaultTableModel(
@@ -419,6 +419,11 @@ public class MainWindow extends javax.swing.JFrame {
         MainWindow_button_submit1.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
         MainWindow_button_submit1.setForeground(new java.awt.Color(242, 242, 242));
         MainWindow_button_submit1.setText("Submit");
+        MainWindow_button_submit1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MainWindow_button_submit1ActionPerformed(evt);
+            }
+        });
 
         MainWindow_button_cancel1.setBackground(new java.awt.Color(153, 0, 51));
         MainWindow_button_cancel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -522,6 +527,11 @@ public class MainWindow extends javax.swing.JFrame {
         MainWindow_button_submit.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
         MainWindow_button_submit.setForeground(new java.awt.Color(242, 242, 242));
         MainWindow_button_submit.setText("Submit");
+        MainWindow_button_submit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MainWindow_button_submitActionPerformed(evt);
+            }
+        });
 
         MainWindow_button_cancel.setBackground(new java.awt.Color(153, 0, 51));
         MainWindow_button_cancel.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -1165,6 +1175,16 @@ public class MainWindow extends javax.swing.JFrame {
         MainWindow_ToggleB_Dues.setVisible(true);
         MainWindow_ToggleB_History.setVisible(true);
     }//GEN-LAST:event_MainWindow_button_cancel1ActionPerformed
+
+    private void MainWindow_button_submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MainWindow_button_submitActionPerformed
+        //add transaction that was made by the user by taking its info and creating a new tranasciton, then passing it through the update functions in DebtSimplification
+        //to add it to the list
+    }//GEN-LAST:event_MainWindow_button_submitActionPerformed
+
+    private void MainWindow_button_submit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MainWindow_button_submit1ActionPerformed
+        //add transaction that was made by the user by taking its info and creating a new tranasciton, then passing it through the update functions in DebtSimplification
+        //to add it to the list
+    }//GEN-LAST:event_MainWindow_button_submit1ActionPerformed
 
     /**
      * @param args the command line arguments

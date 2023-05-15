@@ -505,7 +505,7 @@
                       <Font name="Segoe UI Semibold" size="36" style="2"/>
                     </Property>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="33" green="33" red="ff" type="rgb"/>
+                      <Color blue="0" green="99" red="0" type="rgb"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Money NUM HERE"/>
                   </Properties>
@@ -707,6 +707,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Submit"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MainWindow_button_submit1ActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="MainWindow_button_cancel1">
                   <Properties>
@@ -891,6 +894,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Submit"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MainWindow_button_submitActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="MainWindow_button_cancel">
                   <Properties>
