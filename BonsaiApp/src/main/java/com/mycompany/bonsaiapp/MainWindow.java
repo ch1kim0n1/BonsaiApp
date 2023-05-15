@@ -337,6 +337,7 @@ public class MainWindow extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        jTable4.setEnabled(false);
         Main_Dashboard_Table_Data3.setViewportView(jTable4);
 
         Main_Dashboard_Button_Request1.setText("Request");
@@ -1057,6 +1058,7 @@ public class MainWindow extends javax.swing.JFrame {
     buildDashboardTable();
     buildDuesTable();
     buildHistorytable();
+    UsernamePUT();
 
     // Login the user
     MainWindow.setVisible(true);
@@ -1303,8 +1305,43 @@ public class MainWindow extends javax.swing.JFrame {
         DefaultTableModel dfm = (DefaultTableModel)jTable3.getModel();
         dfm.setDataVector(data, headers);
     }
-    //build data for table
-    //build users and their info
+    
+    public void UsernamePUT(){
+        String na = userLogged.getUserName();
+        Main_UserInfo_Text_Username.setText(na);
+        
+        ArrayList<Transaction> UserTransaction = userLogged.getUserTransactions();
+        ArrayList<Transaction> DueTransaction = userLogged.getDueTransactions();
+        
+        int row1 = 0;
+        double totaldue = 0;
+        
+        int row2 = 0;
+        double totaluser =  0;
+        
+        for(Transaction t : DueTransaction){
+            double mon = t.getAmount();
+            totaldue += mon;
+            row1++;
+        }
+        
+        for(Transaction t : UserTransaction){
+            double mon2 = t.getAmount();
+            String type = t.getTransactionType();
+            if(type.equals("owe")){
+                totaluser += mon2;
+            }
+            else{
+                totaluser -= mon2;
+            }
+            
+            row2++;
+        }
+        
+        jLabel8.setText("$"+totaldue+"");
+        Main_Dashboard_Text_Money1.setText("$"+totaluser+"");
+        
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel LoginWindow;

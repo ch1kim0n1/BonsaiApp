@@ -52,6 +52,19 @@ public class DebtSimplification {
             }
         }
     }
+    
+     private void UpdateUserTransactions(Transaction t) {
+        //this method will filter all Bonsai transactions to only the user's transactions
+
+
+            if (t.getUserNameFrom().equals(name)) {
+                userTransactions.add(t);
+            }
+            if (t.getUserNameTo().equals(name)) {
+                userTransactions.add(t);
+            }
+     
+    }
 
     /*private void buildReducedTransactions() {
         //This method will create the arraylist for the dashboard.
