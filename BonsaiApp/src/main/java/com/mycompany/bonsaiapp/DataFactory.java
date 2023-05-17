@@ -98,9 +98,11 @@ public class DataFactory implements Serializable {
         usernames.add(user.getUserName());
     }
     return usernames;
-}
+    }
 
-
+    public void writeTransactions(ArrayList<Transaction> t) {
+        
+    }
     public BonsaiManagerModel getModel() {
         return new BonsaiManagerModel(users, transactions);
     }

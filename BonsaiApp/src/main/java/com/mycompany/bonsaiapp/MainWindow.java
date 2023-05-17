@@ -4,6 +4,7 @@
  */
 package com.mycompany.bonsaiapp;
 
+import java.awt.Color;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -271,7 +272,7 @@ public class MainWindow extends javax.swing.JFrame {
                     .addComponent(loginWindow_Button_newUser, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(85, 85, 85)
                 .addComponent(longWindow_label_wornglogin, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(116, Short.MAX_VALUE))
+                .addContainerGap(111, Short.MAX_VALUE))
         );
 
         MainWindow.setBackground(new java.awt.Color(102, 102, 102));
@@ -365,10 +366,10 @@ public class MainWindow extends javax.swing.JFrame {
                     .addGroup(MainWindow_Panel_DashboardLayout.createSequentialGroup()
                         .addGap(156, 156, 156)
                         .addComponent(Main_Dashboard_Text_ExpectedProfits1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 133, Short.MAX_VALUE))
+                        .addGap(0, 112, Short.MAX_VALUE))
                     .addGroup(MainWindow_Panel_DashboardLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(Main_Dashboard_Table_Data3)))
+                        .addComponent(Main_Dashboard_Table_Data3, javax.swing.GroupLayout.DEFAULT_SIZE, 448, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainWindow_Panel_DashboardLayout.createSequentialGroup()
                 .addGap(48, 48, 48)
@@ -395,7 +396,7 @@ public class MainWindow extends javax.swing.JFrame {
                 .addGap(17, 17, 17)
                 .addComponent(jButton6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Main_Dashboard_Table_Data3, javax.swing.GroupLayout.DEFAULT_SIZE, 399, Short.MAX_VALUE)
+                .addComponent(Main_Dashboard_Table_Data3, javax.swing.GroupLayout.DEFAULT_SIZE, 411, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addGroup(MainWindow_Panel_DashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Main_Dashboard_Button_Request1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -471,7 +472,7 @@ public class MainWindow extends javax.swing.JFrame {
                     .addGroup(MainWindow_Panel_RequestLayout.createSequentialGroup()
                         .addGap(108, 108, 108)
                         .addComponent(MainWindow_label_Reason1, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(94, Short.MAX_VALUE))
+                .addContainerGap(73, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainWindow_Panel_RequestLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(MainWindow_Panel_RequestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -579,7 +580,7 @@ public class MainWindow extends javax.swing.JFrame {
                     .addGroup(MainWindow_Panel_OweLayout.createSequentialGroup()
                         .addGap(108, 108, 108)
                         .addComponent(MainWindow_label_Reason, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(106, Short.MAX_VALUE))
+                .addContainerGap(85, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainWindow_Panel_OweLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(MainWindow_Panel_OweLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -614,7 +615,7 @@ public class MainWindow extends javax.swing.JFrame {
                 .addComponent(MainWindow_label_Reason, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(MainWindow_textField_textareascroll, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 137, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 125, Short.MAX_VALUE)
                 .addComponent(MainWindow_button_submit, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36))
         );
@@ -642,7 +643,7 @@ public class MainWindow extends javax.swing.JFrame {
         MainWindow_Panel_DuesLayout.setHorizontalGroup(
             MainWindow_Panel_DuesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainWindow_Panel_DuesLayout.createSequentialGroup()
-                .addGap(0, 155, Short.MAX_VALUE)
+                .addGap(0, 134, Short.MAX_VALUE)
                 .addGroup(MainWindow_Panel_DuesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainWindow_Panel_DuesLayout.createSequentialGroup()
                         .addComponent(jLabel8)
@@ -656,8 +657,8 @@ public class MainWindow extends javax.swing.JFrame {
                         .addGap(213, 213, 213)
                         .addComponent(jLabel7))
                     .addGroup(MainWindow_Panel_DuesLayout.createSequentialGroup()
-                        .addGap(17, 17, 17)
-                        .addComponent(Main_Dashboard_Table_Data1, javax.swing.GroupLayout.PREFERRED_SIZE, 461, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap()
+                        .addComponent(Main_Dashboard_Table_Data1, javax.swing.GroupLayout.PREFERRED_SIZE, 443, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         MainWindow_Panel_DuesLayout.setVerticalGroup(
@@ -700,7 +701,7 @@ public class MainWindow extends javax.swing.JFrame {
             .addGroup(MainWindow_Panel_HistoryLayout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addComponent(jLabel9)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 274, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 289, Short.MAX_VALUE)
                 .addComponent(jButton5)
                 .addContainerGap())
             .addGroup(MainWindow_Panel_HistoryLayout.createSequentialGroup()
@@ -711,13 +712,13 @@ public class MainWindow extends javax.swing.JFrame {
         MainWindow_Panel_HistoryLayout.setVerticalGroup(
             MainWindow_Panel_HistoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainWindow_Panel_HistoryLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(53, Short.MAX_VALUE)
                 .addGroup(MainWindow_Panel_HistoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Main_Dashboard_Table_Data2, javax.swing.GroupLayout.PREFERRED_SIZE, 527, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(178, 178, 178))
+                .addGap(62, 62, 62))
         );
 
         UserInfo.setBackground(new java.awt.Color(204, 204, 204));
@@ -739,7 +740,7 @@ public class MainWindow extends javax.swing.JFrame {
             .addGroup(UserInfoLayout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addComponent(Main_UserInfo_Text_Username)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 181, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Main_UserInfo_Button_LogOut, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -782,26 +783,26 @@ public class MainWindow extends javax.swing.JFrame {
             MainWindow_Panel_HolderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainWindow_Panel_HolderLayout.createSequentialGroup()
                 .addComponent(UserInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 127, Short.MAX_VALUE)
-                .addComponent(MainWindow_Panel_History, javax.swing.GroupLayout.PREFERRED_SIZE, 668, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 14, Short.MAX_VALUE)
+                .addComponent(MainWindow_Panel_History, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(MainWindow_Panel_HolderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainWindow_Panel_HolderLayout.createSequentialGroup()
-                    .addGap(0, 132, Short.MAX_VALUE)
+                    .addGap(0, 19, Short.MAX_VALUE)
                     .addComponent(MainWindow_Panel_Dues, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
             .addGroup(MainWindow_Panel_HolderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainWindow_Panel_HolderLayout.createSequentialGroup()
-                    .addGap(0, 149, Short.MAX_VALUE)
+                    .addGap(0, 48, Short.MAX_VALUE)
                     .addComponent(MainWindow_Panel_Owe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
             .addGroup(MainWindow_Panel_HolderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(MainWindow_Panel_HolderLayout.createSequentialGroup()
                     .addGap(42, 42, 42)
                     .addComponent(MainWindow_Panel_Dashboard, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(131, Short.MAX_VALUE)))
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
             .addGroup(MainWindow_Panel_HolderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(MainWindow_Panel_HolderLayout.createSequentialGroup()
                     .addGap(36, 36, 36)
                     .addComponent(MainWindow_Panel_Request, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(125, Short.MAX_VALUE)))
+                    .addContainerGap(12, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout MainWindowLayout = new javax.swing.GroupLayout(MainWindow);
@@ -954,7 +955,7 @@ public class MainWindow extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(LoginWindow, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(65, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addComponent(RegistrationWindow, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1043,18 +1044,23 @@ public class MainWindow extends javax.swing.JFrame {
     String username = loginWindow_textField_username.getText();
     String password = loginWindow_textField_password.getText();
 
-    // Get the username list from DataFactory
-    List<String> usernames = dataFactory.getUsernames();
-
+    // Get the username list
+    List<String> usernames = new ArrayList<>();
+    for (User user : users.values()) {
+        usernames.add(user.getUserName());
+    }
+    
     // Check if the username is in the list
     if (!usernames.contains(username)) {
         // Invalid username
         JOptionPane.showMessageDialog(null, "Invalid username");
         return;
     }
-
+    
+    
     // Check if the password is correct
-    User user = dataFactory.users.get(username);
+    User user = users.get(username);
+    
     if (password == null || !password.equals(user.getPassword())) {
         // Invalid password
         JOptionPane.showMessageDialog(null, "Invalid password");
@@ -1063,7 +1069,6 @@ public class MainWindow extends javax.swing.JFrame {
     
     userLogged = user;
     DebtSimplification ds = new DebtSimplification(userLogged, transactions);
-    //System.out.println(userLogged.getUserTransactions());
     
     buildDashboardTable();
     buildDuesTable();
@@ -1107,8 +1112,8 @@ public class MainWindow extends javax.swing.JFrame {
     }
 
     // Check if the username already exists
-    DataFactory dataFactory = new DataFactory();
-    User user = dataFactory.users.get(username);
+    //DataFactory dataFactory = new DataFactory();
+    User user = users.get(username);
     if (user != null) {
         // Username already exists
         JOptionPane.showMessageDialog(null, "Username already exists");
@@ -1116,19 +1121,15 @@ public class MainWindow extends javax.swing.JFrame {
     }
 
     // Create a new user
-    user = new User(realName, username, password);
-    dataFactory.users.put(username, user);
+    user = new User(username, realName, password);
+    users.put(username, user);
 
-    // Write the user data to the UserCSV.txt file
-    try {
-        FileWriter fw = new FileWriter("UserCSV.txt");
-        for (User u : dataFactory.users.values()) {
-            fw.write(u.getDisplayName() + "\t" + u.getUserName() + "\t" + u.getPassword() + "\n");
-        }
-        fw.close();
-    } catch (IOException e) {
-        e.printStackTrace();
-    }
+    userLogged = user;
+   
+    buildDashboardTable();
+    buildDuesTable();
+    buildHistorytable();
+    UsernamePUT();
 
     // Login the user
     MainWindow.setVisible(true);
@@ -1137,7 +1138,12 @@ public class MainWindow extends javax.swing.JFrame {
     MainWindow_Panel_Dues.setVisible(false);
     MainWindow_Panel_History.setVisible(false);
     LoginWindow.setVisible(false);
+    MainWindow_Panel_Owe.setVisible(false);
+    MainWindow_Panel_Request.setVisible(false);
     RegistrationWindow.setVisible(false);
+    MainWindow_ToggleB_Dashboard.setVisible(true);
+    MainWindow_ToggleB_Dues.setVisible(true);
+    MainWindow_ToggleB_History.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void Main_Dashboard_Button_Owe1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Main_Dashboard_Button_Owe1ActionPerformed
@@ -1185,6 +1191,10 @@ public class MainWindow extends javax.swing.JFrame {
         //add transaction that was made by the user by taking its info and creating a new tranasciton, then passing it through the update functions in DebtSimplification
         //to add it to the list
     }//GEN-LAST:event_MainWindow_button_submit1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1249,24 +1259,24 @@ public class MainWindow extends javax.swing.JFrame {
         
         ArrayList<Transaction> UserTransaction = userLogged.getUserTransactions();
         
-        if(UserTransaction == null){
-            return;
-        }
         
-        Object[][] data = new Object[UserTransaction.size()][4];
+        Object[][] data = null;
         String[] headers = {"Name + Reason", "Type", "Amount", "Done?"};
         
-        int row = 0;
-        
-        for(Transaction t : UserTransaction){
-            String displayName = users.get(t.getUserNameFrom()).getDisplayName();
-            data[row][0] = displayName + ", " + t.getReason();
-            data[row][1] = t.getTransactionType();
-            data[row][2] = t.getAmount();
-            data[row][3] = t.isDone();
-            row++;
+        if(UserTransaction != null) {
+            data = new Object[UserTransaction.size()][4];
+
+            int row = 0;
+
+            for(Transaction t : UserTransaction){
+                String displayName = users.get(t.getUserNameFrom()).getDisplayName();
+                data[row][0] = displayName + ", " + t.getReason();
+                data[row][1] = t.getTransactionType();
+                data[row][2] = t.getAmount();
+                data[row][3] = t.isDone();
+                row++;
+            }
         }
-        
         DefaultTableModel dfm = (DefaultTableModel)jTable4.getModel();
         dfm.setDataVector(data, headers);
     }
@@ -1276,7 +1286,6 @@ public class MainWindow extends javax.swing.JFrame {
         //called when new due is created, it is going to update the due chart only
         
         ArrayList<Transaction> DueTransaction = userLogged.getDueTransactions();
-        System.out.println(DueTransaction);
         
         if(DueTransaction == null){
             return;
@@ -1339,25 +1348,39 @@ public class MainWindow extends javax.swing.JFrame {
         int row2 = 0;
         double totaluser =  0;
         
-        for(Transaction t : DueTransaction){
-            double mon = t.getAmount();
-            totaldue += mon;
-            row1++;
+        if (userLogged.getUserTransactions() != null) {
+            for(Transaction t : DueTransaction){
+                double mon = t.getAmount();
+                totaldue += mon;
+                row1++;
+            }
+
+            for(Transaction t : UserTransaction){
+                double mon2 = t.getAmount();
+                String type = t.getTransactionType();
+                 if(type.equals("owe")){
+                    if(!t.isDone()){
+                        totaluser -= mon2;
+                    }
+                }
+                else{
+                    if(!t.isDone()){
+                        totaluser += mon2;
+                    }
+                }
+
+                row2++;
+            }
         }
         
-        for(Transaction t : UserTransaction){
-            double mon2 = t.getAmount();
-            String type = t.getTransactionType();
-            if(type.equals("owe")){
-                totaluser += mon2;
-            }
-            else{
-                totaluser -= mon2;
-            }
-            
-            row2++;
-        }
+        if (totaluser < 0)
+            Main_Dashboard_Text_Money1.setForeground(Color.red);
         
+        else if (totaluser == 0)
+            Main_Dashboard_Text_Money1.setForeground(Color.gray);
+        
+        else
+            Main_Dashboard_Text_Money1.setForeground(Color.green);
         jLabel8.setText("$"+totaldue+"");
         Main_Dashboard_Text_Money1.setText("$"+totaluser+"");
         
