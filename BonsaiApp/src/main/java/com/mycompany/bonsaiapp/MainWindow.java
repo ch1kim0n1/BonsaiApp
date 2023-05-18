@@ -335,40 +335,39 @@ public class MainWindow extends javax.swing.JFrame {
         MainWindow_Panel_DashboardLayout.setHorizontalGroup(
             MainWindow_Panel_DashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MainWindow_Panel_DashboardLayout.createSequentialGroup()
-                .addGroup(MainWindow_Panel_DashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(MainWindow_Panel_DashboardLayout.createSequentialGroup()
-                        .addGap(156, 156, 156)
-                        .addComponent(Main_Dashboard_Text_ExpectedProfits1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 124, Short.MAX_VALUE))
-                    .addGroup(MainWindow_Panel_DashboardLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(Main_Dashboard_Table_Data3, javax.swing.GroupLayout.DEFAULT_SIZE, 460, Short.MAX_VALUE)))
+                .addContainerGap()
+                .addComponent(Main_Dashboard_Table_Data3, javax.swing.GroupLayout.DEFAULT_SIZE, 460, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainWindow_Panel_DashboardLayout.createSequentialGroup()
-                .addGap(48, 48, 48)
+                .addGap(55, 55, 55)
                 .addComponent(Main_Dashboard_Button_Owe1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Main_Dashboard_Button_Request1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(57, 57, 57))
+                .addGap(48, 48, 48))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainWindow_Panel_DashboardLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Main_Dashboard_Text_Money1, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(63, 63, 63))
+                .addGroup(MainWindow_Panel_DashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainWindow_Panel_DashboardLayout.createSequentialGroup()
+                        .addComponent(Main_Dashboard_Text_Money1, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(64, 64, 64))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainWindow_Panel_DashboardLayout.createSequentialGroup()
+                        .addComponent(Main_Dashboard_Text_ExpectedProfits1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(140, 140, 140))))
         );
         MainWindow_Panel_DashboardLayout.setVerticalGroup(
             MainWindow_Panel_DashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MainWindow_Panel_DashboardLayout.createSequentialGroup()
-                .addGap(51, 51, 51)
+                .addGap(23, 23, 23)
                 .addComponent(Main_Dashboard_Text_ExpectedProfits1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Main_Dashboard_Text_Money1)
-                .addGap(26, 26, 26)
-                .addComponent(Main_Dashboard_Table_Data3, javax.swing.GroupLayout.DEFAULT_SIZE, 407, Short.MAX_VALUE)
-                .addGap(44, 44, 44)
+                .addGap(46, 46, 46)
                 .addGroup(MainWindow_Panel_DashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Main_Dashboard_Button_Request1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Main_Dashboard_Button_Owe1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(12, 12, 12))
+                    .addComponent(Main_Dashboard_Button_Owe1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Main_Dashboard_Button_Request1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Main_Dashboard_Table_Data3, javax.swing.GroupLayout.PREFERRED_SIZE, 438, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         MainWindow_Panel_Request.setBackground(new java.awt.Color(102, 102, 102));
@@ -492,7 +491,7 @@ public class MainWindow extends javax.swing.JFrame {
         MainWindow_textField_textareascroll.setViewportView(MainWindow_textArea_reason);
 
         MainWindow_button_submitOwe.setBackground(new java.awt.Color(0, 204, 0));
-        MainWindow_button_submitOwe.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
+        MainWindow_button_submitOwe.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
         MainWindow_button_submitOwe.setForeground(new java.awt.Color(242, 242, 242));
         MainWindow_button_submitOwe.setText("Submit");
         MainWindow_button_submitOwe.addActionListener(new java.awt.event.ActionListener() {
@@ -533,6 +532,15 @@ public class MainWindow extends javax.swing.JFrame {
         MainWindow_Panel_Owe.setLayout(MainWindow_Panel_OweLayout);
         MainWindow_Panel_OweLayout.setHorizontalGroup(
             MainWindow_Panel_OweLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainWindow_Panel_OweLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(MainWindow_Panel_OweLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainWindow_Panel_OweLayout.createSequentialGroup()
+                        .addComponent(MainWindow_label_owe, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(155, 155, 155))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainWindow_Panel_OweLayout.createSequentialGroup()
+                        .addComponent(MainWindow_label_amount, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(109, 109, 109))))
             .addGroup(MainWindow_Panel_OweLayout.createSequentialGroup()
                 .addGroup(MainWindow_Panel_OweLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(MainWindow_Panel_OweLayout.createSequentialGroup()
@@ -546,30 +554,20 @@ public class MainWindow extends javax.swing.JFrame {
                         .addComponent(MainWindow_label_username, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(MainWindow_Panel_OweLayout.createSequentialGroup()
                         .addGap(108, 108, 108)
-                        .addComponent(MainWindow_label_Reason, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(MainWindow_label_Reason, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(MainWindow_Panel_OweLayout.createSequentialGroup()
+                        .addGap(182, 182, 182)
+                        .addComponent(MainWindow_button_cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(MainWindow_Panel_OweLayout.createSequentialGroup()
+                        .addGap(130, 130, 130)
+                        .addComponent(MainWindow_button_submitOwe, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(97, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainWindow_Panel_OweLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(MainWindow_Panel_OweLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainWindow_Panel_OweLayout.createSequentialGroup()
-                        .addComponent(MainWindow_button_submitOwe, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(157, 157, 157))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainWindow_Panel_OweLayout.createSequentialGroup()
-                        .addComponent(MainWindow_label_owe, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(38, 38, 38)
-                        .addComponent(MainWindow_button_cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(17, 17, 17))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainWindow_Panel_OweLayout.createSequentialGroup()
-                        .addComponent(MainWindow_label_amount, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(109, 109, 109))))
         );
         MainWindow_Panel_OweLayout.setVerticalGroup(
             MainWindow_Panel_OweLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MainWindow_Panel_OweLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
-                .addGroup(MainWindow_Panel_OweLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(MainWindow_button_cancel)
-                    .addComponent(MainWindow_label_owe, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(MainWindow_label_owe, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(51, 51, 51)
                 .addComponent(MainWindow_label_username, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -582,9 +580,11 @@ public class MainWindow extends javax.swing.JFrame {
                 .addComponent(MainWindow_label_Reason, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(MainWindow_textField_textareascroll, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 125, Short.MAX_VALUE)
-                .addComponent(MainWindow_button_submitOwe, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36))
+                .addGap(30, 30, 30)
+                .addComponent(MainWindow_button_submitOwe, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(MainWindow_button_cancel)
+                .addContainerGap(90, Short.MAX_VALUE))
         );
 
         MainWindow_Panel_Dues.setBackground(new java.awt.Color(102, 102, 102));
@@ -1381,7 +1381,7 @@ public class MainWindow extends javax.swing.JFrame {
         if (userLogged.getUserTransactions() != null) {
             for (Transaction t : DueTransaction) {
                 double mon = t.getAmount();
-                totaldue += mon;
+                totaldue -= mon;
                 row1++;
             }
 
