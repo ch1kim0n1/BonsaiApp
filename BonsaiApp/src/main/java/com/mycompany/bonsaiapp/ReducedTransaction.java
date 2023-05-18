@@ -9,6 +9,7 @@ package com.mycompany.bonsaiapp;
  * @author alejandrodiaz
  */
 public class ReducedTransaction {
+
     private String userName;
     private double Amount;
 
@@ -32,6 +33,5 @@ public class ReducedTransaction {
     public void setAmount(double Amount) {
         this.Amount = Amount;
     }
-    
-    
+
 }

@@ -4,10 +4,8 @@
  */
 package com.mycompany.bonsaiapp;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.Serializable;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -33,6 +31,9 @@ public class DataFactory implements Serializable {
         return pathU + " " + pathT;
     }
 
+    //This method will access the txt file and take the information about every user that is stored.
+    //it will take udername, displayname, and password and include them into the User list
+    //Path for the file is the same for eveyone, so you dont need to put path manually
     private void BuildUsers() {
         try {
             users = new HashMap<>();
@@ -55,12 +56,14 @@ public class DataFactory implements Serializable {
                 User user = new User(username, displayName, password);
                 users.put(username, user);
             }
-        }
-        catch (FileNotFoundException ex) {
+        } catch (FileNotFoundException ex) {
             System.out.println("ERROR: Users TXT file not found");
         }
     }
 
+    //This method will access the txt file and take the information about every user that is stored.
+    //it will take userfrom, type, amount, userto, reason, date, and done? and include them into the Transaction list
+    //Path for the file is the same for eveyone, so you dont need to put path manually
     private void BuildTransactions() {
         try {
             transactions = new ArrayList<>();
@@ -91,18 +94,17 @@ public class DataFactory implements Serializable {
             System.out.println("ERROR: Transactions TXT file not found");
         }
     }
-    
+
+    //this function will take collected information about users and take only their usernames
+    //later needed for login verification
     public List<String> getUsernames() {
-    List<String> usernames = new ArrayList<>();
-    for (User user : users.values()) {
-        usernames.add(user.getUserName());
-    }
-    return usernames;
+        List<String> usernames = new ArrayList<>();
+        for (User user : users.values()) {
+            usernames.add(user.getUserName());
+        }
+        return usernames;
     }
 
-    public void writeTransactions(ArrayList<Transaction> t) {
-        
-    }
     public BonsaiManagerModel getModel() {
         return new BonsaiManagerModel(users, transactions);
     }

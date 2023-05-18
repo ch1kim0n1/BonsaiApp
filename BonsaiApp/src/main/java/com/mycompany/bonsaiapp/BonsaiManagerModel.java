@@ -12,7 +12,7 @@ import java.util.HashMap;
  * @author skyla
  */
 public class BonsaiManagerModel {
-   
+
     HashMap<String, User> user;
     ArrayList<Transaction> transaction;
 
@@ -20,5 +20,5 @@ public class BonsaiManagerModel {
         this.user = user;
         this.transaction = transaction;
     }
-    
+
 }

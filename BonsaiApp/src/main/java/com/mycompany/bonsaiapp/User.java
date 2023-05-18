@@ -27,6 +27,7 @@ public class User {
     private ArrayList<Transaction> dueTransactions;
     private ArrayList<Transaction> doneTransactions;
 
+   //constructor method for the main user
     public User(String userName, String displayName, String password, double credit, double debt, ArrayList<Transaction> ut,
             ArrayList<Transaction> rt, ArrayList<Transaction> dueT, ArrayList<Transaction> doneT) {
         this.userName = userName;
@@ -40,6 +41,7 @@ public class User {
         this.doneTransactions = doneT;
     }
 
+    //this construction method is created when new user is registerd, newly created profiles are empty and they dont have any dues, owes, or any lists to consider
     public User(String userName, String displayName, String password) {
         this.userName = userName;
         this.displayName = displayName;
@@ -107,7 +109,8 @@ public class User {
     public void setUserTransactions(ArrayList<Transaction> userTransactions) {
         this.userTransactions = userTransactions;
     }
-    public ArrayList<Transaction> getUserTransactions(){
+
+    public ArrayList<Transaction> getUserTransactions() {
         return userTransactions;
     }
 

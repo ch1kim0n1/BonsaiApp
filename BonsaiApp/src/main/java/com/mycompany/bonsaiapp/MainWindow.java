@@ -5,13 +5,12 @@
 package com.mycompany.bonsaiapp;
 
 import java.awt.Color;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author skyla
@@ -30,37 +29,12 @@ public class MainWindow extends javax.swing.JFrame {
         initComponents();
         StartConfigs();
 
-        //DataFactory df = new DataFactory();
         //change data type to string
         // Get the data from the DataFactory classs
         users = dataFactory.users;
         transactions = dataFactory.transactions;
-        
-        String data = displayData();
 
-        // Display the data in the jTextPane1 text field
-        jTextArea1.setText(data);
-        
-        
-        //----------------------------------test---------------------------------------------
-        
-//        //later on we need to get data from csv to automatically add to the chart
-//        DebtAndGainChart chart = new DebtAndGainChart();
-//        chart.addDebt("alejdiaz", 50);
-//        chart.addDebt("alejdiaz", 5);
-//        chart.addGain("chikimoni", 15);
-//
-//        JFrame frame = new JFrame("Debt and Gain Chart");
-//        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//
-//        JPanel panel = new JPanel();
-//        JFreeChart chartPanel = chart.createChart();
-//        panel.add(new ChartPanel(chartPanel));
-//
-//        frame.add(panel);
-//        frame.pack();
-//        frame.setLocationRelativeTo(null);
-//        frame.setVisible(true);
+        String data = displayData();
 
     }
 
@@ -89,10 +63,9 @@ public class MainWindow extends javax.swing.JFrame {
         loginWindow_textField_username = new javax.swing.JTextField();
         loginWindow_button_enter = new javax.swing.JButton();
         loginWindow_Button_newUser = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        LoginWindow_label_logo = new javax.swing.JLabel();
         longWindow_label_wornglogin = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        loginWindow_label_username1 = new javax.swing.JLabel();
         MainWindow = new javax.swing.JPanel();
         MainWindow_ToggleB_Dashboard = new javax.swing.JToggleButton();
         MainWindow_ToggleB_Dues = new javax.swing.JToggleButton();
@@ -102,17 +75,16 @@ public class MainWindow extends javax.swing.JFrame {
         Main_Dashboard_Text_ExpectedProfits1 = new javax.swing.JLabel();
         Main_Dashboard_Text_Money1 = new javax.swing.JLabel();
         Main_Dashboard_Table_Data3 = new javax.swing.JScrollPane();
-        jTable4 = new javax.swing.JTable();
+        MainDashboard_Table = new javax.swing.JTable();
         Main_Dashboard_Button_Request1 = new javax.swing.JButton();
         Main_Dashboard_Button_Owe1 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
         MainWindow_Panel_Request = new javax.swing.JPanel();
         MainWindow_label_Reason1 = new javax.swing.JLabel();
         MainWindow_textField_username1 = new javax.swing.JTextField();
         MainWindow_textField_amount1 = new javax.swing.JTextField();
         MainWindow_textField_textareascroll1 = new javax.swing.JScrollPane();
         MainWindow_textArea_reason1 = new javax.swing.JTextArea();
-        MainWindow_button_submit1 = new javax.swing.JButton();
+        MainWindow_button_submitRequest = new javax.swing.JButton();
         MainWindow_button_cancel1 = new javax.swing.JButton();
         MainWindow_label_owe1 = new javax.swing.JLabel();
         MainWindow_label_username1 = new javax.swing.JLabel();
@@ -123,38 +95,33 @@ public class MainWindow extends javax.swing.JFrame {
         MainWindow_textField_amount = new javax.swing.JTextField();
         MainWindow_textField_textareascroll = new javax.swing.JScrollPane();
         MainWindow_textArea_reason = new javax.swing.JTextArea();
-        MainWindow_button_submit = new javax.swing.JButton();
+        MainWindow_button_submitOwe = new javax.swing.JButton();
         MainWindow_button_cancel = new javax.swing.JButton();
         MainWindow_label_owe = new javax.swing.JLabel();
         MainWindow_label_username = new javax.swing.JLabel();
         MainWindow_label_amount = new javax.swing.JLabel();
         MainWindow_Panel_Dues = new javax.swing.JPanel();
         Main_Dashboard_Table_Data1 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
+        DuePanel_Table = new javax.swing.JTable();
+        DueWindow_Label_yourdues = new javax.swing.JLabel();
+        DueWindow_Label_dues = new javax.swing.JLabel();
         MainWindow_Panel_History = new javax.swing.JPanel();
         Main_Dashboard_Table_Data2 = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
-        jLabel9 = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
+        HistoryLog_Table = new javax.swing.JTable();
+        HistoryLog_label_HL = new javax.swing.JLabel();
         UserInfo = new javax.swing.JPanel();
         Main_UserInfo_Text_Username = new javax.swing.JLabel();
         Main_UserInfo_Button_LogOut = new javax.swing.JButton();
         RegistrationWindow = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextPane1 = new javax.swing.JTextPane();
-        jLabel6 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
+        RegWindow_label_newuser = new javax.swing.JLabel();
+        RegWindow_button_register = new javax.swing.JButton();
+        RegWindow_textfield_username = new javax.swing.JTextField();
+        RegWindow_textfield_password = new javax.swing.JTextField();
+        RegWindow_textfiled_realname = new javax.swing.JTextField();
+        RegWindow_label_realname = new javax.swing.JLabel();
+        RegWindow_label_password = new javax.swing.JLabel();
+        RegWindow_label_username = new javax.swing.JLabel();
+        RegWindow_button_back = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("loginWindow");
@@ -164,25 +131,23 @@ public class MainWindow extends javax.swing.JFrame {
         LoginWindow.setBackground(new java.awt.Color(102, 102, 102));
         LoginWindow.setDoubleBuffered(false);
 
-        loginWindow_label_username.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
+        loginWindow_label_username.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         loginWindow_label_username.setForeground(new java.awt.Color(242, 242, 242));
         loginWindow_label_username.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        loginWindow_label_username.setText("Username");
+        loginWindow_label_username.setText("Because Money Dont Grow on Trees");
 
         loginWindow_textField_password.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        loginWindow_textField_password.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                loginWindow_textField_passwordActionPerformed(evt);
-            }
-        });
 
-        loginWindow_label_password.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
+        loginWindow_label_password.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
         loginWindow_label_password.setForeground(new java.awt.Color(242, 242, 242));
         loginWindow_label_password.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         loginWindow_label_password.setText("Password");
 
         loginWindow_textField_username.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
+        loginWindow_button_enter.setBackground(new java.awt.Color(0, 153, 0));
+        loginWindow_button_enter.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        loginWindow_button_enter.setForeground(new java.awt.Color(242, 242, 242));
         loginWindow_button_enter.setText("Enter");
         loginWindow_button_enter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -190,6 +155,9 @@ public class MainWindow extends javax.swing.JFrame {
             }
         });
 
+        loginWindow_Button_newUser.setBackground(new java.awt.Color(0, 153, 0));
+        loginWindow_Button_newUser.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        loginWindow_Button_newUser.setForeground(new java.awt.Color(242, 242, 242));
         loginWindow_Button_newUser.setText("New User?");
         loginWindow_Button_newUser.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -202,65 +170,66 @@ public class MainWindow extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setBackground(new java.awt.Color(0, 204, 51));
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 204, 51));
-        jLabel1.setText("Bonsai");
+        LoginWindow_label_logo.setBackground(new java.awt.Color(0, 204, 51));
+        LoginWindow_label_logo.setFont(new java.awt.Font("Perpetua", 3, 70)); // NOI18N
+        LoginWindow_label_logo.setForeground(new java.awt.Color(0, 204, 51));
+        LoginWindow_label_logo.setText("Bonsai");
 
-        longWindow_label_wornglogin.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        longWindow_label_wornglogin.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         longWindow_label_wornglogin.setForeground(new java.awt.Color(255, 0, 0));
         longWindow_label_wornglogin.setText("Wrong password/username, try again");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane2.setViewportView(jTextArea1);
+        loginWindow_label_username1.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        loginWindow_label_username1.setForeground(new java.awt.Color(242, 242, 242));
+        loginWindow_label_username1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        loginWindow_label_username1.setText("Username");
 
         javax.swing.GroupLayout LoginWindowLayout = new javax.swing.GroupLayout(LoginWindow);
         LoginWindow.setLayout(LoginWindowLayout);
         LoginWindowLayout.setHorizontalGroup(
             LoginWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(LoginWindowLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LoginWindowLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
                 .addGroup(LoginWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(LoginWindowLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(loginWindow_label_password, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(loginWindow_label_username, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(LoginWindowLayout.createSequentialGroup()
-                        .addGroup(LoginWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(LoginWindowLayout.createSequentialGroup()
-                                .addGap(94, 94, 94)
-                                .addComponent(longWindow_label_wornglogin))
-                            .addGroup(LoginWindowLayout.createSequentialGroup()
-                                .addGap(182, 182, 182)
-                                .addComponent(jLabel1))
-                            .addGroup(LoginWindowLayout.createSequentialGroup()
-                                .addGap(40, 40, 40)
-                                .addComponent(loginWindow_textField_username, javax.swing.GroupLayout.PREFERRED_SIZE, 422, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(LoginWindowLayout.createSequentialGroup()
-                                .addGap(35, 35, 35)
-                                .addComponent(loginWindow_textField_password, javax.swing.GroupLayout.PREFERRED_SIZE, 428, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(LoginWindowLayout.createSequentialGroup()
-                                .addGap(114, 114, 114)
-                                .addComponent(loginWindow_button_enter, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(63, 63, 63)
-                                .addComponent(loginWindow_Button_newUser, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LoginWindowLayout.createSequentialGroup()
+                        .addComponent(loginWindow_textField_password, javax.swing.GroupLayout.PREFERRED_SIZE, 428, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LoginWindowLayout.createSequentialGroup()
+                        .addComponent(loginWindow_label_password, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(134, 134, 134))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LoginWindowLayout.createSequentialGroup()
+                        .addGroup(LoginWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(loginWindow_label_username, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(loginWindow_textField_username, javax.swing.GroupLayout.PREFERRED_SIZE, 422, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(23, 23, 23))))
             .addGroup(LoginWindowLayout.createSequentialGroup()
-                .addGap(115, 115, 115)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(133, 133, 133)
+                .addComponent(LoginWindow_label_logo)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LoginWindowLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(loginWindow_label_username1, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(129, 129, 129))
+            .addGroup(LoginWindowLayout.createSequentialGroup()
+                .addGap(80, 80, 80)
+                .addGroup(LoginWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(longWindow_label_wornglogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(LoginWindowLayout.createSequentialGroup()
+                        .addComponent(loginWindow_button_enter, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(loginWindow_Button_newUser, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(61, 61, 61))
         );
         LoginWindowLayout.setVerticalGroup(
             LoginWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(LoginWindowLayout.createSequentialGroup()
-                .addGap(64, 64, 64)
-                .addComponent(jLabel1)
-                .addGap(21, 21, 21)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(27, 27, 27)
+                .addComponent(LoginWindow_label_logo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(loginWindow_label_username)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(127, 127, 127)
+                .addComponent(loginWindow_label_username1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(loginWindow_textField_username, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(loginWindow_label_password)
@@ -270,16 +239,16 @@ public class MainWindow extends javax.swing.JFrame {
                 .addGroup(LoginWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(loginWindow_button_enter, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(loginWindow_Button_newUser, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(85, 85, 85)
+                .addGap(77, 77, 77)
                 .addComponent(longWindow_label_wornglogin, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(111, Short.MAX_VALUE))
+                .addContainerGap(109, Short.MAX_VALUE))
         );
 
         MainWindow.setBackground(new java.awt.Color(102, 102, 102));
         MainWindow.setEnabled(false);
 
         MainWindow_ToggleB_Dashboard.setBackground(new java.awt.Color(0, 153, 51));
-        MainWindow_ToggleB_Dashboard.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        MainWindow_ToggleB_Dashboard.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         MainWindow_ToggleB_Dashboard.setForeground(new java.awt.Color(242, 242, 242));
         MainWindow_ToggleB_Dashboard.setText("Dashboard");
         MainWindow_ToggleB_Dashboard.addActionListener(new java.awt.event.ActionListener() {
@@ -289,7 +258,7 @@ public class MainWindow extends javax.swing.JFrame {
         });
 
         MainWindow_ToggleB_Dues.setBackground(new java.awt.Color(0, 153, 51));
-        MainWindow_ToggleB_Dues.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        MainWindow_ToggleB_Dues.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         MainWindow_ToggleB_Dues.setForeground(new java.awt.Color(242, 242, 242));
         MainWindow_ToggleB_Dues.setText("Dues");
         MainWindow_ToggleB_Dues.addActionListener(new java.awt.event.ActionListener() {
@@ -299,7 +268,7 @@ public class MainWindow extends javax.swing.JFrame {
         });
 
         MainWindow_ToggleB_History.setBackground(new java.awt.Color(0, 153, 51));
-        MainWindow_ToggleB_History.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        MainWindow_ToggleB_History.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         MainWindow_ToggleB_History.setForeground(new java.awt.Color(242, 242, 242));
         MainWindow_ToggleB_History.setText("History");
         MainWindow_ToggleB_History.addActionListener(new java.awt.event.ActionListener() {
@@ -318,11 +287,11 @@ public class MainWindow extends javax.swing.JFrame {
         Main_Dashboard_Text_ExpectedProfits1.setText("Expected Profits:");
         Main_Dashboard_Text_ExpectedProfits1.setToolTipText("");
 
-        Main_Dashboard_Text_Money1.setFont(new java.awt.Font("Segoe UI Semibold", 2, 36)); // NOI18N
+        Main_Dashboard_Text_Money1.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 2, 48)); // NOI18N
         Main_Dashboard_Text_Money1.setForeground(new java.awt.Color(0, 153, 0));
         Main_Dashboard_Text_Money1.setText("Money NUM HERE");
 
-        jTable4.setModel(new javax.swing.table.DefaultTableModel(
+        MainDashboard_Table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -338,9 +307,12 @@ public class MainWindow extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jTable4.setEnabled(false);
-        Main_Dashboard_Table_Data3.setViewportView(jTable4);
+        MainDashboard_Table.setEnabled(false);
+        Main_Dashboard_Table_Data3.setViewportView(MainDashboard_Table);
 
+        Main_Dashboard_Button_Request1.setBackground(new java.awt.Color(0, 153, 0));
+        Main_Dashboard_Button_Request1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        Main_Dashboard_Button_Request1.setForeground(new java.awt.Color(242, 242, 242));
         Main_Dashboard_Button_Request1.setText("Request");
         Main_Dashboard_Button_Request1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -348,14 +320,15 @@ public class MainWindow extends javax.swing.JFrame {
             }
         });
 
+        Main_Dashboard_Button_Owe1.setBackground(new java.awt.Color(0, 153, 0));
+        Main_Dashboard_Button_Owe1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        Main_Dashboard_Button_Owe1.setForeground(new java.awt.Color(242, 242, 242));
         Main_Dashboard_Button_Owe1.setText("Owe");
         Main_Dashboard_Button_Owe1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Main_Dashboard_Button_Owe1ActionPerformed(evt);
             }
         });
-
-        jButton6.setText("Show the Chart");
 
         javax.swing.GroupLayout MainWindow_Panel_DashboardLayout = new javax.swing.GroupLayout(MainWindow_Panel_Dashboard);
         MainWindow_Panel_Dashboard.setLayout(MainWindow_Panel_DashboardLayout);
@@ -366,10 +339,10 @@ public class MainWindow extends javax.swing.JFrame {
                     .addGroup(MainWindow_Panel_DashboardLayout.createSequentialGroup()
                         .addGap(156, 156, 156)
                         .addComponent(Main_Dashboard_Text_ExpectedProfits1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 112, Short.MAX_VALUE))
+                        .addGap(0, 124, Short.MAX_VALUE))
                     .addGroup(MainWindow_Panel_DashboardLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(Main_Dashboard_Table_Data3, javax.swing.GroupLayout.DEFAULT_SIZE, 448, Short.MAX_VALUE)))
+                        .addComponent(Main_Dashboard_Table_Data3, javax.swing.GroupLayout.DEFAULT_SIZE, 460, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainWindow_Panel_DashboardLayout.createSequentialGroup()
                 .addGap(48, 48, 48)
@@ -379,12 +352,8 @@ public class MainWindow extends javax.swing.JFrame {
                 .addGap(57, 57, 57))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainWindow_Panel_DashboardLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton6)
-                .addContainerGap())
-            .addGroup(MainWindow_Panel_DashboardLayout.createSequentialGroup()
-                .addGap(112, 112, 112)
-                .addComponent(Main_Dashboard_Text_Money1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(Main_Dashboard_Text_Money1, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(63, 63, 63))
         );
         MainWindow_Panel_DashboardLayout.setVerticalGroup(
             MainWindow_Panel_DashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -393,11 +362,9 @@ public class MainWindow extends javax.swing.JFrame {
                 .addComponent(Main_Dashboard_Text_ExpectedProfits1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Main_Dashboard_Text_Money1)
-                .addGap(17, 17, 17)
-                .addComponent(jButton6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Main_Dashboard_Table_Data3, javax.swing.GroupLayout.DEFAULT_SIZE, 411, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
+                .addGap(26, 26, 26)
+                .addComponent(Main_Dashboard_Table_Data3, javax.swing.GroupLayout.DEFAULT_SIZE, 407, Short.MAX_VALUE)
+                .addGap(44, 44, 44)
                 .addGroup(MainWindow_Panel_DashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Main_Dashboard_Button_Request1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Main_Dashboard_Button_Owe1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -416,13 +383,13 @@ public class MainWindow extends javax.swing.JFrame {
         MainWindow_textArea_reason1.setRows(5);
         MainWindow_textField_textareascroll1.setViewportView(MainWindow_textArea_reason1);
 
-        MainWindow_button_submit1.setBackground(new java.awt.Color(0, 204, 0));
-        MainWindow_button_submit1.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
-        MainWindow_button_submit1.setForeground(new java.awt.Color(242, 242, 242));
-        MainWindow_button_submit1.setText("Submit");
-        MainWindow_button_submit1.addActionListener(new java.awt.event.ActionListener() {
+        MainWindow_button_submitRequest.setBackground(new java.awt.Color(0, 204, 0));
+        MainWindow_button_submitRequest.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        MainWindow_button_submitRequest.setForeground(new java.awt.Color(242, 242, 242));
+        MainWindow_button_submitRequest.setText("Submit");
+        MainWindow_button_submitRequest.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MainWindow_button_submit1ActionPerformed(evt);
+                MainWindow_button_submitRequestActionPerformed(evt);
             }
         });
 
@@ -436,19 +403,19 @@ public class MainWindow extends javax.swing.JFrame {
             }
         });
 
-        MainWindow_label_owe1.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
-        MainWindow_label_owe1.setForeground(new java.awt.Color(242, 242, 242));
+        MainWindow_label_owe1.setFont(new java.awt.Font("SansSerif", 1, 36)); // NOI18N
+        MainWindow_label_owe1.setForeground(new java.awt.Color(0, 204, 0));
         MainWindow_label_owe1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         MainWindow_label_owe1.setText("Request");
         MainWindow_label_owe1.setToolTipText("");
 
-        MainWindow_label_username1.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        MainWindow_label_username1.setFont(new java.awt.Font("Myanmar Text", 1, 24)); // NOI18N
         MainWindow_label_username1.setForeground(new java.awt.Color(242, 242, 242));
         MainWindow_label_username1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         MainWindow_label_username1.setText("Username(From)");
         MainWindow_label_username1.setToolTipText("");
 
-        MainWindow_label_amount1.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        MainWindow_label_amount1.setFont(new java.awt.Font("Myanmar Text", 1, 24)); // NOI18N
         MainWindow_label_amount1.setForeground(new java.awt.Color(242, 242, 242));
         MainWindow_label_amount1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         MainWindow_label_amount1.setText("Amount (Ex: 12.43)");
@@ -463,38 +430,36 @@ public class MainWindow extends javax.swing.JFrame {
                     .addGroup(MainWindow_Panel_RequestLayout.createSequentialGroup()
                         .addGap(79, 79, 79)
                         .addGroup(MainWindow_Panel_RequestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(MainWindow_textField_textareascroll1, javax.swing.GroupLayout.DEFAULT_SIZE, 308, Short.MAX_VALUE)
-                            .addComponent(MainWindow_textField_amount1)
+                            .addComponent(MainWindow_textField_amount1, javax.swing.GroupLayout.DEFAULT_SIZE, 308, Short.MAX_VALUE)
                             .addComponent(MainWindow_textField_username1)))
                     .addGroup(MainWindow_Panel_RequestLayout.createSequentialGroup()
                         .addGap(110, 110, 110)
                         .addComponent(MainWindow_label_username1, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(MainWindow_Panel_RequestLayout.createSequentialGroup()
-                        .addGap(108, 108, 108)
-                        .addComponent(MainWindow_label_Reason1, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(73, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainWindow_Panel_RequestLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(MainWindow_Panel_RequestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainWindow_Panel_RequestLayout.createSequentialGroup()
-                        .addComponent(MainWindow_button_submit1, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(157, 157, 157))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainWindow_Panel_RequestLayout.createSequentialGroup()
-                        .addComponent(MainWindow_label_owe1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(38, 38, 38)
-                        .addComponent(MainWindow_button_cancel1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(17, 17, 17))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainWindow_Panel_RequestLayout.createSequentialGroup()
-                        .addComponent(MainWindow_label_amount1, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(109, 109, 109))))
+                        .addGap(129, 129, 129)
+                        .addComponent(MainWindow_button_submitRequest, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(MainWindow_Panel_RequestLayout.createSequentialGroup()
+                        .addGap(188, 188, 188)
+                        .addComponent(MainWindow_button_cancel1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(MainWindow_Panel_RequestLayout.createSequentialGroup()
+                        .addGap(102, 102, 102)
+                        .addComponent(MainWindow_label_Reason1, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(MainWindow_Panel_RequestLayout.createSequentialGroup()
+                        .addGap(110, 110, 110)
+                        .addComponent(MainWindow_label_amount1, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(MainWindow_Panel_RequestLayout.createSequentialGroup()
+                        .addGap(150, 150, 150)
+                        .addComponent(MainWindow_label_owe1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(MainWindow_Panel_RequestLayout.createSequentialGroup()
+                        .addGap(55, 55, 55)
+                        .addComponent(MainWindow_textField_textareascroll1, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(61, Short.MAX_VALUE))
         );
         MainWindow_Panel_RequestLayout.setVerticalGroup(
             MainWindow_Panel_RequestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MainWindow_Panel_RequestLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
-                .addGroup(MainWindow_Panel_RequestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(MainWindow_button_cancel1)
-                    .addComponent(MainWindow_label_owe1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(MainWindow_label_owe1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(62, 62, 62)
                 .addComponent(MainWindow_label_username1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -507,9 +472,11 @@ public class MainWindow extends javax.swing.JFrame {
                 .addComponent(MainWindow_label_Reason1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(MainWindow_textField_textareascroll1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 125, Short.MAX_VALUE)
-                .addComponent(MainWindow_button_submit1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                .addComponent(MainWindow_button_submitRequest, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(MainWindow_button_cancel1)
+                .addGap(47, 47, 47))
         );
 
         MainWindow_Panel_Owe.setBackground(new java.awt.Color(102, 102, 102));
@@ -524,13 +491,13 @@ public class MainWindow extends javax.swing.JFrame {
         MainWindow_textArea_reason.setRows(5);
         MainWindow_textField_textareascroll.setViewportView(MainWindow_textArea_reason);
 
-        MainWindow_button_submit.setBackground(new java.awt.Color(0, 204, 0));
-        MainWindow_button_submit.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
-        MainWindow_button_submit.setForeground(new java.awt.Color(242, 242, 242));
-        MainWindow_button_submit.setText("Submit");
-        MainWindow_button_submit.addActionListener(new java.awt.event.ActionListener() {
+        MainWindow_button_submitOwe.setBackground(new java.awt.Color(0, 204, 0));
+        MainWindow_button_submitOwe.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
+        MainWindow_button_submitOwe.setForeground(new java.awt.Color(242, 242, 242));
+        MainWindow_button_submitOwe.setText("Submit");
+        MainWindow_button_submitOwe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MainWindow_button_submitActionPerformed(evt);
+                MainWindow_button_submitOweActionPerformed(evt);
             }
         });
 
@@ -544,8 +511,8 @@ public class MainWindow extends javax.swing.JFrame {
             }
         });
 
-        MainWindow_label_owe.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
-        MainWindow_label_owe.setForeground(new java.awt.Color(242, 242, 242));
+        MainWindow_label_owe.setFont(new java.awt.Font("Segoe UI Black", 1, 48)); // NOI18N
+        MainWindow_label_owe.setForeground(new java.awt.Color(0, 204, 0));
         MainWindow_label_owe.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         MainWindow_label_owe.setText("Owe");
         MainWindow_label_owe.setToolTipText("");
@@ -580,12 +547,12 @@ public class MainWindow extends javax.swing.JFrame {
                     .addGroup(MainWindow_Panel_OweLayout.createSequentialGroup()
                         .addGap(108, 108, 108)
                         .addComponent(MainWindow_label_Reason, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(85, Short.MAX_VALUE))
+                .addContainerGap(97, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainWindow_Panel_OweLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(MainWindow_Panel_OweLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainWindow_Panel_OweLayout.createSequentialGroup()
-                        .addComponent(MainWindow_button_submit, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(MainWindow_button_submitOwe, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(157, 157, 157))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainWindow_Panel_OweLayout.createSequentialGroup()
                         .addComponent(MainWindow_label_owe, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -602,8 +569,8 @@ public class MainWindow extends javax.swing.JFrame {
                 .addGap(16, 16, 16)
                 .addGroup(MainWindow_Panel_OweLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(MainWindow_button_cancel)
-                    .addComponent(MainWindow_label_owe, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(62, 62, 62)
+                    .addComponent(MainWindow_label_owe, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(51, 51, 51)
                 .addComponent(MainWindow_label_username, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(MainWindow_textField_username, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -616,69 +583,59 @@ public class MainWindow extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(MainWindow_textField_textareascroll, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 125, Short.MAX_VALUE)
-                .addComponent(MainWindow_button_submit, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(MainWindow_button_submitOwe, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36))
         );
 
         MainWindow_Panel_Dues.setBackground(new java.awt.Color(102, 102, 102));
 
-        Main_Dashboard_Table_Data1.setViewportView(jTable2);
-        if (jTable2.getColumnModel().getColumnCount() > 0) {
-            jTable2.getColumnModel().getColumn(0).setHeaderValue("Name + Reason");
-            jTable2.getColumnModel().getColumn(1).setHeaderValue("Amount");
+        Main_Dashboard_Table_Data1.setViewportView(DuePanel_Table);
+        if (DuePanel_Table.getColumnModel().getColumnCount() > 0) {
+            DuePanel_Table.getColumnModel().getColumn(0).setHeaderValue("Name + Reason");
+            DuePanel_Table.getColumnModel().getColumn(1).setHeaderValue("Amount");
         }
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(242, 242, 242));
-        jLabel7.setText("Your Dues:");
+        DueWindow_Label_yourdues.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 1, 18)); // NOI18N
+        DueWindow_Label_yourdues.setForeground(new java.awt.Color(242, 242, 242));
+        DueWindow_Label_yourdues.setText("Your Dues:");
 
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 51, 51));
-        jLabel8.setText("Number is here");
-
-        jButton4.setText("Show the Chart");
+        DueWindow_Label_dues.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        DueWindow_Label_dues.setForeground(new java.awt.Color(255, 51, 51));
+        DueWindow_Label_dues.setText("Number is here");
 
         javax.swing.GroupLayout MainWindow_Panel_DuesLayout = new javax.swing.GroupLayout(MainWindow_Panel_Dues);
         MainWindow_Panel_Dues.setLayout(MainWindow_Panel_DuesLayout);
         MainWindow_Panel_DuesLayout.setHorizontalGroup(
             MainWindow_Panel_DuesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainWindow_Panel_DuesLayout.createSequentialGroup()
-                .addGap(0, 134, Short.MAX_VALUE)
-                .addGroup(MainWindow_Panel_DuesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainWindow_Panel_DuesLayout.createSequentialGroup()
-                        .addComponent(jLabel8)
-                        .addGap(166, 166, 166))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainWindow_Panel_DuesLayout.createSequentialGroup()
-                        .addComponent(jButton4)
-                        .addContainerGap())))
             .addGroup(MainWindow_Panel_DuesLayout.createSequentialGroup()
                 .addGroup(MainWindow_Panel_DuesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(MainWindow_Panel_DuesLayout.createSequentialGroup()
-                        .addGap(213, 213, 213)
-                        .addComponent(jLabel7))
+                        .addGap(201, 201, 201)
+                        .addComponent(DueWindow_Label_yourdues))
                     .addGroup(MainWindow_Panel_DuesLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(Main_Dashboard_Table_Data1, javax.swing.GroupLayout.PREFERRED_SIZE, 443, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(17, 17, 17)
+                        .addComponent(Main_Dashboard_Table_Data1, javax.swing.GroupLayout.PREFERRED_SIZE, 443, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(MainWindow_Panel_DuesLayout.createSequentialGroup()
+                        .addGap(115, 115, 115)
+                        .addComponent(DueWindow_Label_dues)))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
         MainWindow_Panel_DuesLayout.setVerticalGroup(
             MainWindow_Panel_DuesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainWindow_Panel_DuesLayout.createSequentialGroup()
                 .addGap(35, 35, 35)
-                .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel8)
+                .addComponent(DueWindow_Label_yourdues)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton4)
-                .addGap(18, 18, 18)
-                .addComponent(Main_Dashboard_Table_Data1, javax.swing.GroupLayout.PREFERRED_SIZE, 542, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28))
+                .addComponent(DueWindow_Label_dues)
+                .addGap(47, 47, 47)
+                .addComponent(Main_Dashboard_Table_Data1, javax.swing.GroupLayout.PREFERRED_SIZE, 486, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(41, 41, 41))
         );
 
         MainWindow_Panel_History.setBackground(new java.awt.Color(102, 102, 102));
         MainWindow_Panel_History.setMaximumSize(new java.awt.Dimension(518, 823));
 
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+        HistoryLog_Table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -686,36 +643,31 @@ public class MainWindow extends javax.swing.JFrame {
                 "Name + Reason", "Type", "Amount"
             }
         ));
-        Main_Dashboard_Table_Data2.setViewportView(jTable3);
+        Main_Dashboard_Table_Data2.setViewportView(HistoryLog_Table);
 
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(242, 242, 242));
-        jLabel9.setText("steam");
-
-        jButton5.setText("Show the Chart");
+        HistoryLog_label_HL.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
+        HistoryLog_label_HL.setForeground(new java.awt.Color(0, 204, 0));
+        HistoryLog_label_HL.setText("History Log");
 
         javax.swing.GroupLayout MainWindow_Panel_HistoryLayout = new javax.swing.GroupLayout(MainWindow_Panel_History);
         MainWindow_Panel_History.setLayout(MainWindow_Panel_HistoryLayout);
         MainWindow_Panel_HistoryLayout.setHorizontalGroup(
             MainWindow_Panel_HistoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MainWindow_Panel_HistoryLayout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addComponent(jLabel9)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 289, Short.MAX_VALUE)
-                .addComponent(jButton5)
-                .addContainerGap())
-            .addGroup(MainWindow_Panel_HistoryLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(Main_Dashboard_Table_Data2, javax.swing.GroupLayout.PREFERRED_SIZE, 437, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(MainWindow_Panel_HistoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(MainWindow_Panel_HistoryLayout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(Main_Dashboard_Table_Data2, javax.swing.GroupLayout.PREFERRED_SIZE, 437, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(MainWindow_Panel_HistoryLayout.createSequentialGroup()
+                        .addGap(129, 129, 129)
+                        .addComponent(HistoryLog_label_HL)))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
         MainWindow_Panel_HistoryLayout.setVerticalGroup(
             MainWindow_Panel_HistoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainWindow_Panel_HistoryLayout.createSequentialGroup()
-                .addContainerGap(53, Short.MAX_VALUE)
-                .addGroup(MainWindow_Panel_HistoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9))
+                .addContainerGap(43, Short.MAX_VALUE)
+                .addComponent(HistoryLog_label_HL)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Main_Dashboard_Table_Data2, javax.swing.GroupLayout.PREFERRED_SIZE, 527, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(62, 62, 62))
@@ -726,13 +678,6 @@ public class MainWindow extends javax.swing.JFrame {
         Main_UserInfo_Text_Username.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         Main_UserInfo_Text_Username.setText("Name HERE");
 
-        Main_UserInfo_Button_LogOut.setText("LOG OUT X");
-        Main_UserInfo_Button_LogOut.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Main_UserInfo_Button_LogOutActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout UserInfoLayout = new javax.swing.GroupLayout(UserInfo);
         UserInfo.setLayout(UserInfoLayout);
         UserInfoLayout.setHorizontalGroup(
@@ -740,21 +685,22 @@ public class MainWindow extends javax.swing.JFrame {
             .addGroup(UserInfoLayout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addComponent(Main_UserInfo_Text_Username)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Main_UserInfo_Button_LogOut, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         UserInfoLayout.setVerticalGroup(
             UserInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, UserInfoLayout.createSequentialGroup()
-                .addContainerGap(21, Short.MAX_VALUE)
-                .addComponent(Main_UserInfo_Text_Username)
-                .addContainerGap())
             .addGroup(UserInfoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(Main_UserInfo_Button_LogOut, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(Main_UserInfo_Text_Username)
+                .addContainerGap(21, Short.MAX_VALUE))
         );
+
+        Main_UserInfo_Button_LogOut.setText("LOG OUT X");
+        Main_UserInfo_Button_LogOut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Main_UserInfo_Button_LogOutActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout MainWindow_Panel_HolderLayout = new javax.swing.GroupLayout(MainWindow_Panel_Holder);
         MainWindow_Panel_Holder.setLayout(MainWindow_Panel_HolderLayout);
@@ -762,7 +708,9 @@ public class MainWindow extends javax.swing.JFrame {
             MainWindow_Panel_HolderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MainWindow_Panel_HolderLayout.createSequentialGroup()
                 .addComponent(UserInfo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(102, 102, 102))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Main_UserInfo_Button_LogOut, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
             .addComponent(MainWindow_Panel_History, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGroup(MainWindow_Panel_HolderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(MainWindow_Panel_Dues, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -782,16 +730,18 @@ public class MainWindow extends javax.swing.JFrame {
         MainWindow_Panel_HolderLayout.setVerticalGroup(
             MainWindow_Panel_HolderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainWindow_Panel_HolderLayout.createSequentialGroup()
-                .addComponent(UserInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 14, Short.MAX_VALUE)
+                .addGroup(MainWindow_Panel_HolderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(UserInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Main_UserInfo_Button_LogOut, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(MainWindow_Panel_History, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(MainWindow_Panel_HolderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainWindow_Panel_HolderLayout.createSequentialGroup()
-                    .addGap(0, 19, Short.MAX_VALUE)
+                    .addGap(0, 61, Short.MAX_VALUE)
                     .addComponent(MainWindow_Panel_Dues, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
             .addGroup(MainWindow_Panel_HolderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainWindow_Panel_HolderLayout.createSequentialGroup()
-                    .addGap(0, 48, Short.MAX_VALUE)
+                    .addGap(0, 58, Short.MAX_VALUE)
                     .addComponent(MainWindow_Panel_Owe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
             .addGroup(MainWindow_Panel_HolderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(MainWindow_Panel_HolderLayout.createSequentialGroup()
@@ -802,7 +752,7 @@ public class MainWindow extends javax.swing.JFrame {
                 .addGroup(MainWindow_Panel_HolderLayout.createSequentialGroup()
                     .addGap(36, 36, 36)
                     .addComponent(MainWindow_Panel_Request, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(12, Short.MAX_VALUE)))
+                    .addContainerGap(22, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout MainWindowLayout = new javax.swing.GroupLayout(MainWindow);
@@ -814,9 +764,9 @@ public class MainWindow extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(MainWindow_ToggleB_Dashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(MainWindow_ToggleB_Dues, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(MainWindow_ToggleB_Dues, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(MainWindow_ToggleB_History, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
+                .addComponent(MainWindow_ToggleB_History, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         MainWindowLayout.setVerticalGroup(
@@ -834,35 +784,39 @@ public class MainWindow extends javax.swing.JFrame {
         RegistrationWindow.setBackground(new java.awt.Color(102, 102, 102));
         RegistrationWindow.setEnabled(false);
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(242, 242, 242));
-        jLabel2.setText("New User Registration");
+        RegWindow_label_newuser.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        RegWindow_label_newuser.setForeground(new java.awt.Color(0, 204, 0));
+        RegWindow_label_newuser.setText("New User Registration");
 
-        jButton2.setText("Register");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        RegWindow_button_register.setBackground(new java.awt.Color(0, 153, 0));
+        RegWindow_button_register.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        RegWindow_button_register.setForeground(new java.awt.Color(242, 242, 242));
+        RegWindow_button_register.setText("Register");
+        RegWindow_button_register.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                RegWindow_button_registerActionPerformed(evt);
             }
         });
 
-        jLabel3.setForeground(new java.awt.Color(242, 242, 242));
-        jLabel3.setText("Your Real Name");
+        RegWindow_label_realname.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        RegWindow_label_realname.setForeground(new java.awt.Color(242, 242, 242));
+        RegWindow_label_realname.setText("Your Real Name");
 
-        jLabel4.setForeground(new java.awt.Color(242, 242, 242));
-        jLabel4.setText("Your Password");
+        RegWindow_label_password.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        RegWindow_label_password.setForeground(new java.awt.Color(242, 242, 242));
+        RegWindow_label_password.setText("Your Password");
 
-        jLabel5.setForeground(new java.awt.Color(242, 242, 242));
-        jLabel5.setText("Your Username");
+        RegWindow_label_username.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        RegWindow_label_username.setForeground(new java.awt.Color(242, 242, 242));
+        RegWindow_label_username.setText("Your Username");
 
-        jScrollPane1.setViewportView(jTextPane1);
-
-        jLabel6.setForeground(new java.awt.Color(242, 242, 242));
-        jLabel6.setText("Error Console");
-
-        jButton3.setText("<-Back");
-        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+        RegWindow_button_back.setBackground(new java.awt.Color(255, 0, 51));
+        RegWindow_button_back.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        RegWindow_button_back.setForeground(new java.awt.Color(242, 242, 242));
+        RegWindow_button_back.setText("<-Back");
+        RegWindow_button_back.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton3MouseClicked(evt);
+                RegWindow_button_backMouseClicked(evt);
             }
         });
 
@@ -871,67 +825,56 @@ public class MainWindow extends javax.swing.JFrame {
         RegistrationWindowLayout.setHorizontalGroup(
             RegistrationWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(RegistrationWindowLayout.createSequentialGroup()
-                .addGroup(RegistrationWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(RegistrationWindowLayout.createSequentialGroup()
-                        .addGap(159, 159, 159)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(RegistrationWindowLayout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(jButton3)
-                        .addGap(80, 80, 80)
-                        .addComponent(jLabel2))
+                .addGroup(RegistrationWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(RegistrationWindowLayout.createSequentialGroup()
                         .addGap(59, 59, 59)
                         .addGroup(RegistrationWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(RegistrationWindowLayout.createSequentialGroup()
-                        .addGap(188, 188, 188)
-                        .addComponent(jLabel3))
+                            .addComponent(RegWindow_textfield_username, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(RegWindow_textfield_password, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(RegWindow_textfiled_realname, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(RegistrationWindowLayout.createSequentialGroup()
                         .addGap(190, 190, 190)
-                        .addComponent(jLabel4))
+                        .addComponent(RegWindow_label_password))
                     .addGroup(RegistrationWindowLayout.createSequentialGroup()
                         .addGap(194, 194, 194)
-                        .addComponent(jLabel5))
+                        .addComponent(RegWindow_label_username))
                     .addGroup(RegistrationWindowLayout.createSequentialGroup()
-                        .addGap(129, 129, 129)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(96, 96, 96)
+                        .addComponent(RegWindow_button_register, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(RegistrationWindowLayout.createSequentialGroup()
-                        .addGap(199, 199, 199)
-                        .addComponent(jLabel6)))
-                .addContainerGap(64, Short.MAX_VALUE))
+                        .addGap(20, 20, 20)
+                        .addComponent(RegWindow_button_back)
+                        .addGroup(RegistrationWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(RegistrationWindowLayout.createSequentialGroup()
+                                .addGap(78, 78, 78)
+                                .addComponent(RegWindow_label_realname))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegistrationWindowLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(RegWindow_label_newuser)))))
+                .addContainerGap(61, Short.MAX_VALUE))
         );
         RegistrationWindowLayout.setVerticalGroup(
             RegistrationWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(RegistrationWindowLayout.createSequentialGroup()
-                .addGroup(RegistrationWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(RegistrationWindowLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(RegistrationWindowLayout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(15, 15, 15)
+                .addGroup(RegistrationWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(RegWindow_button_back, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(RegWindow_label_newuser, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(52, 52, 52)
-                .addComponent(jLabel3)
+                .addComponent(RegWindow_label_realname)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(RegWindow_textfiled_realname, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(49, 49, 49)
-                .addComponent(jLabel5)
+                .addComponent(RegWindow_label_username)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(RegWindow_textfield_username, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(67, 67, 67)
-                .addComponent(jLabel4)
+                .addComponent(RegWindow_label_password)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(92, 92, 92)
-                .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE)
-                .addGap(38, 38, 38)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28))
+                .addComponent(RegWindow_textfield_password, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(96, 96, 96)
+                .addComponent(RegWindow_button_register, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(99, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -940,16 +883,16 @@ public class MainWindow extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(LoginWindow, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addComponent(RegistrationWindow, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 30, Short.MAX_VALUE)))
+                    .addGap(0, 18, Short.MAX_VALUE)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
                     .addComponent(MainWindow, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addContainerGap(15, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -974,13 +917,13 @@ public class MainWindow extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+    private void RegWindow_button_backMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegWindow_button_backMouseClicked
         RegistrationWindow.setVisible(false);
         MainWindow_Panel_Owe.setVisible(false);
         MainWindow_Panel_Request.setVisible(false);
         LoginWindow.setVisible(true);
         MainWindow.setVisible(false);
-    }//GEN-LAST:event_jButton3MouseClicked
+    }//GEN-LAST:event_RegWindow_button_backMouseClicked
 
     private void MainWindow_ToggleB_DashboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MainWindow_ToggleB_DashboardActionPerformed
         MainWindow_Panel_Holder.setVisible(true);
@@ -1038,118 +981,110 @@ public class MainWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_loginWindow_Button_newUserMouseClicked
 
     private void loginWindow_button_enterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginWindow_button_enterActionPerformed
-   // CHECK IF LOGIN INFO IS WORKING
+        // Get the username and password from the login form
+        String username = loginWindow_textField_username.getText();
+        String password = loginWindow_textField_password.getText();
 
-    // Get the username and password from the login form
-    String username = loginWindow_textField_username.getText();
-    String password = loginWindow_textField_password.getText();
+        // Get the username list
+        List<String> usernames = new ArrayList<>();
+        for (User user : users.values()) {
+            usernames.add(user.getUserName());
+        }
 
-    // Get the username list
-    List<String> usernames = new ArrayList<>();
-    for (User user : users.values()) {
-        usernames.add(user.getUserName());
-    }
-    
-    // Check if the username is in the list
-    if (!usernames.contains(username)) {
-        // Invalid username
-        JOptionPane.showMessageDialog(null, "Invalid username");
-        return;
-    }
-    
-    
-    // Check if the password is correct
-    User user = users.get(username);
-    
-    if (password == null || !password.equals(user.getPassword())) {
-        // Invalid password
-        JOptionPane.showMessageDialog(null, "Invalid password");
-        return;
-    }
-    
-    userLogged = user;
-    DebtSimplification ds = new DebtSimplification(userLogged, transactions);
-    
-    buildDashboardTable();
-    buildDuesTable();
-    buildHistorytable();
-    UsernamePUT();
+        // Check if the username is in the list
+        if (!usernames.contains(username)) {
+            // Invalid username
+            JOptionPane.showMessageDialog(null, "Invalid username");
+            return;
+        }
 
-    // Login the user
-    MainWindow.setVisible(true);
-    MainWindow_Panel_Holder.setVisible(true);
-    MainWindow_Panel_Owe.setVisible(true);
-    MainWindow_Panel_Dues.setVisible(false);
-    MainWindow_Panel_History.setVisible(false);
-    LoginWindow.setVisible(false);
-    MainWindow_Panel_Owe.setVisible(false);
-    MainWindow_Panel_Request.setVisible(false);
-    RegistrationWindow.setVisible(false);
-    MainWindow_ToggleB_Dashboard.setVisible(true);
-    MainWindow_ToggleB_Dues.setVisible(true);
-    MainWindow_ToggleB_History.setVisible(true);
+        // Check if the password is correct
+        User user = users.get(username);
+
+        if (password == null || !password.equals(user.getPassword())) {
+            // Invalid password
+            JOptionPane.showMessageDialog(null, "Invalid password");
+            return;
+        }
+
+        //assign a user that is logged to the global varibale userLogged to use it in different methods
+        userLogged = user;
+        DebtSimplification ds = new DebtSimplification(userLogged, transactions);
+
+        //update all tables
+        buildDashboardTable();
+        buildDuesTable();
+        buildHistorytable();
+        UsernamePUT();
+
+        MainWindow.setVisible(true);
+        MainWindow_Panel_Holder.setVisible(true);
+        MainWindow_Panel_Owe.setVisible(true);
+        MainWindow_Panel_Dues.setVisible(false);
+        MainWindow_Panel_History.setVisible(false);
+        LoginWindow.setVisible(false);
+        MainWindow_Panel_Owe.setVisible(false);
+        MainWindow_Panel_Request.setVisible(false);
+        RegistrationWindow.setVisible(false);
+        MainWindow_ToggleB_Dashboard.setVisible(true);
+        MainWindow_ToggleB_Dues.setVisible(true);
+        MainWindow_ToggleB_History.setVisible(true);
 
     }//GEN-LAST:event_loginWindow_button_enterActionPerformed
-
-    private void loginWindow_textField_passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginWindow_textField_passwordActionPerformed
-        //text
-    }//GEN-LAST:event_loginWindow_textField_passwordActionPerformed
-
     private void loginWindow_Button_newUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginWindow_Button_newUserActionPerformed
-        // TODO add your handling code here:
+        // this code will move user to the regestration window
     }//GEN-LAST:event_loginWindow_Button_newUserActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-    // Get the real name, username, and password from the registration form
-    String realName = jTextField5.getText();
-    String username = jTextField3.getText();
-    String password = jTextField4.getText();
+    private void RegWindow_button_registerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegWindow_button_registerActionPerformed
+        // Get the real name, username, and password from the registration form
+        String realName = RegWindow_textfiled_realname.getText();
+        String username = RegWindow_textfield_username.getText();
+        String password = RegWindow_textfield_password.getText();
 
-    // Check if all the data is entered
-    if (realName.isEmpty() || username.isEmpty() || password.isEmpty()) {
-        JOptionPane.showMessageDialog(null, "Please enter all the required data");
-        return;
-    }
+        // Check if all the data is entered
+        if (realName.isEmpty() || username.isEmpty() || password.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Please enter all the required data");
+            return;
+        }
 
-    // Check if the username already exists
-    //DataFactory dataFactory = new DataFactory();
-    User user = users.get(username);
-    if (user != null) {
-        // Username already exists
-        JOptionPane.showMessageDialog(null, "Username already exists");
-        return;
-    }
+        // Check if the username already exists
+        //DataFactory dataFactory = new DataFactory();
+        User user = users.get(username);
+        if (user != null) {
+            // Username already exists
+            JOptionPane.showMessageDialog(null, "Username already exists");
+            return;
+        }
 
-    // Create a new user
-    user = new User(username, realName, password);
-    users.put(username, user);
+        // Create a new user + assign to global variable
+        user = new User(username, realName, password);
+        users.put(username, user);
+        userLogged = user;
 
-    userLogged = user;
-   
-    buildDashboardTable();
-    buildDuesTable();
-    buildHistorytable();
-    UsernamePUT();
+        //update all the tables
+        buildDashboardTable();
+        buildDuesTable();
+        buildHistorytable();
+        UsernamePUT();
 
-    // Login the user
-    MainWindow.setVisible(true);
-    MainWindow_Panel_Holder.setVisible(true);
-    MainWindow_Panel_Owe.setVisible(true);
-    MainWindow_Panel_Dues.setVisible(false);
-    MainWindow_Panel_History.setVisible(false);
-    LoginWindow.setVisible(false);
-    MainWindow_Panel_Owe.setVisible(false);
-    MainWindow_Panel_Request.setVisible(false);
-    RegistrationWindow.setVisible(false);
-    MainWindow_ToggleB_Dashboard.setVisible(true);
-    MainWindow_ToggleB_Dues.setVisible(true);
-    MainWindow_ToggleB_History.setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
+        MainWindow.setVisible(true);
+        MainWindow_Panel_Holder.setVisible(true);
+        MainWindow_Panel_Owe.setVisible(true);
+        MainWindow_Panel_Dues.setVisible(false);
+        MainWindow_Panel_History.setVisible(false);
+        LoginWindow.setVisible(false);
+        MainWindow_Panel_Owe.setVisible(false);
+        MainWindow_Panel_Request.setVisible(false);
+        RegistrationWindow.setVisible(false);
+        MainWindow_ToggleB_Dashboard.setVisible(true);
+        MainWindow_ToggleB_Dues.setVisible(true);
+        MainWindow_ToggleB_History.setVisible(true);
+    }//GEN-LAST:event_RegWindow_button_registerActionPerformed
 
     private void Main_Dashboard_Button_Owe1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Main_Dashboard_Button_Owe1ActionPerformed
         MainWindow_Panel_Dashboard.setVisible(false);
         MainWindow_Panel_Owe.setVisible(true);
-        
+
         MainWindow_ToggleB_Dashboard.setVisible(false);
         MainWindow_ToggleB_Dues.setVisible(false);
         MainWindow_ToggleB_History.setVisible(false);
@@ -1158,7 +1093,7 @@ public class MainWindow extends javax.swing.JFrame {
     private void Main_Dashboard_Button_Request1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Main_Dashboard_Button_Request1ActionPerformed
         MainWindow_Panel_Dashboard.setVisible(false);
         MainWindow_Panel_Request.setVisible(true);
-        
+
         MainWindow_ToggleB_Dashboard.setVisible(false);
         MainWindow_ToggleB_Dues.setVisible(false);
         MainWindow_ToggleB_History.setVisible(false);
@@ -1167,7 +1102,7 @@ public class MainWindow extends javax.swing.JFrame {
     private void MainWindow_button_cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MainWindow_button_cancelActionPerformed
         MainWindow_Panel_Dashboard.setVisible(true);
         MainWindow_Panel_Owe.setVisible(false);
-        
+
         MainWindow_ToggleB_Dashboard.setVisible(true);
         MainWindow_ToggleB_Dues.setVisible(true);
         MainWindow_ToggleB_History.setVisible(true);
@@ -1176,24 +1111,103 @@ public class MainWindow extends javax.swing.JFrame {
     private void MainWindow_button_cancel1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MainWindow_button_cancel1ActionPerformed
         MainWindow_Panel_Dashboard.setVisible(true);
         MainWindow_Panel_Request.setVisible(false);
-        
+
         MainWindow_ToggleB_Dashboard.setVisible(true);
         MainWindow_ToggleB_Dues.setVisible(true);
         MainWindow_ToggleB_History.setVisible(true);
     }//GEN-LAST:event_MainWindow_button_cancel1ActionPerformed
 
-    private void MainWindow_button_submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MainWindow_button_submitActionPerformed
-        //add transaction that was made by the user by taking its info and creating a new tranasciton, then passing it through the update functions in DebtSimplification
-        //to add it to the list
-    }//GEN-LAST:event_MainWindow_button_submitActionPerformed
+    private void MainWindow_button_submitOweActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MainWindow_button_submitOweActionPerformed
+        //1. this code will collect all the data from the text boxes and create a transaction object adding to the global transaction list
+        //1.5 checks id name is correct + checks if number is provided(not word or letter)
+        //2. UPdate all of the teable (Or the ones that will add new Owe)
+        //2.5 create a local time stamp for this object
+        //3. switch to the dashboard
 
-    private void MainWindow_button_submit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MainWindow_button_submit1ActionPerformed
-        //add transaction that was made by the user by taking its info and creating a new tranasciton, then passing it through the update functions in DebtSimplification
-        //to add it to the list
-    }//GEN-LAST:event_MainWindow_button_submit1ActionPerformed
+        String name = MainWindow_textField_username1.getText();
+        String amount = MainWindow_textField_amount1.getText();
+        String reason = MainWindow_textArea_reason1.getText();
+
+        String disname = userLogged.getDisplayName();
+
+        // Get the username list
+        List<String> usernames = new ArrayList<>();
+        for (User user : users.values()) {
+            usernames.add(user.getUserName());
+        }
+
+        // Check if the username is in the list
+        if (!usernames.contains(name)) {
+            // Invalid username
+            JOptionPane.showMessageDialog(null, "Invalid username");
+            return;
+        }
+
+        if (!amount.matches("[0-9]+")) {
+            JOptionPane.showMessageDialog(null, "Amount must be a number.");
+            return;
+        }
+
+        // 1. Create a new Transaction object
+        Transaction transaction = new Transaction(disname, "owe", Integer.parseInt(amount), name, reason, false);
+
+        // 1. Add the transaction to the "transactions" global variable in MainWindow
+        transactions.add(transaction);
+
+        //refresh the tables
+        buildDashboardTable();
+        buildDuesTable();
+        buildHistorytable();
+        UsernamePUT();
+    }//GEN-LAST:event_MainWindow_button_submitOweActionPerformed
+
+    private void MainWindow_button_submitRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MainWindow_button_submitRequestActionPerformed
+        //1. this code will collect all the data from the text boxes and create a transaction object adding to the global transaction list
+        //1.5 checks id name is correct + checks if number is provided(not word or letter)
+        //2. UPdate all of the teable (Or the ones that will add new Request)
+        //2.5 create a local time stamp for this object
+        //3. switch to the dashboard
+
+        String name = MainWindow_textField_username1.getText();
+        String amount = MainWindow_textField_amount1.getText();
+        String reason = MainWindow_textArea_reason1.getText();
+
+        String disname = userLogged.getDisplayName();
+
+        // Get the username list
+        List<String> usernames = new ArrayList<>();
+        for (User user : users.values()) {
+            usernames.add(user.getUserName());
+        }
+
+        // Check if the username is in the list
+        if (!usernames.contains(name)) {
+            // Invalid username
+            JOptionPane.showMessageDialog(null, "Invalid username");
+            return;
+        }
+
+        if (!amount.matches("[0-9]+")) {
+            JOptionPane.showMessageDialog(null, "Amount must be a number.");
+            return;
+        }
+
+        // 1. Create a new Transaction object
+        Transaction transaction = new Transaction(disname, "due", Integer.parseInt(amount), name, reason, false);
+
+        // 1. Add the transaction to the "transactions" global variable in MainWindow
+        transactions.add(transaction);
+
+        //need to refresh
+        buildDashboardTable();
+        buildDuesTable();
+        buildHistorytable();
+        UsernamePUT();
+
+    }//GEN-LAST:event_MainWindow_button_submitRequestActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+        //idk whats that
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
@@ -1231,13 +1245,17 @@ public class MainWindow extends javax.swing.JFrame {
         });
     }
 
+    //this method gets model of the user, by taking the user + transaction of the user based on the key(username)
     public BonsaiManagerModel getModel() {
         return new BonsaiManagerModel(users, transactions); //its actually arraylist
     }
 
+    //this was a test method that is displaying data from the text files.
+    //making sure that our data extraction logic is wokring correctly
     private String displayData() {
         StringBuilder sb = new StringBuilder();
 
+        //Accessing the data and printing them out in the assigned text filed for both user and transaction
         sb.append("USERS:\n");
         for (User user : users.values()) {
             sb.append("* ").append(user.getUserName()).append(" - ").append(user.getDisplayName()).append(" - ").append(user.getPassword()).append("\n");
@@ -1250,25 +1268,25 @@ public class MainWindow extends javax.swing.JFrame {
 
         return sb.toString();
     }
-    
-    //ALL # CLASSES NEED TO BE CALLED AT THE VERY BEGINNING
-    public void buildDashboardTable(){
+
+    public void buildDashboardTable() {
         //this class will build a table for the dashboard by taking all the tranaction data and inputing it into the table. 
         //showign total balance with + and -
         //Need to run again as soon as we create new due or request
-        
+
         ArrayList<Transaction> UserTransaction = userLogged.getUserTransactions();
-        
-        
+
         Object[][] data = null;
         String[] headers = {"Name + Reason", "Type", "Amount", "Done?"};
         
-        if(UserTransaction != null) {
+        //this logic will take the transaction of the specific user and then take all neccessary info
+        //and input them into the table + following the table heading format
+        if (UserTransaction != null) {
             data = new Object[UserTransaction.size()][4];
 
             int row = 0;
 
-            for(Transaction t : UserTransaction){
+            for (Transaction t : UserTransaction) {
                 String displayName = users.get(t.getUserNameFrom()).getDisplayName();
                 data[row][0] = displayName + ", " + t.getReason();
                 data[row][1] = t.getTransactionType();
@@ -1277,94 +1295,105 @@ public class MainWindow extends javax.swing.JFrame {
                 row++;
             }
         }
-        DefaultTableModel dfm = (DefaultTableModel)jTable4.getModel();
+        DefaultTableModel dfm = (DefaultTableModel) MainDashboard_Table.getModel();
         dfm.setDataVector(data, headers);
     }
-    
-    public void buildDuesTable(){
+
+    public void buildDuesTable() {
         //takes only due data and showign it up with the total amount due
         //called when new due is created, it is going to update the due chart only
-        
+
         ArrayList<Transaction> DueTransaction = userLogged.getDueTransactions();
-        
-        if(DueTransaction == null){
+
+        //is there anything? no? then its none.
+        if (DueTransaction == null) {
             return;
         }
-        
+
         Object[][] data = new Object[DueTransaction.size()][2];
         String[] headers = {"Name + Reason", "Amount"};
-        
+
         int row = 0;
-        
-        for(Transaction t : DueTransaction){
+
+        //this logic will take the transaction of the specific user and then take all neccessary info
+        //and input them into the table + following the table heading format
+        //Only dues are taken
+        for (Transaction t : DueTransaction) {
             String displayName = users.get(t.getUserNameFrom()).getDisplayName();
             data[row][0] = displayName + ", " + t.getReason();
             data[row][1] = t.getAmount();
             row++;
         }
-        
-        DefaultTableModel dfm = (DefaultTableModel)jTable2.getModel();
+
+        DefaultTableModel dfm = (DefaultTableModel) DuePanel_Table.getModel();
         dfm.setDataVector(data, headers);
     }
-    
-    public void buildHistorytable(){
+
+    public void buildHistorytable() {
         //takes all of the tranasction data and retireves all info to display as reason, from, and to whom
         //updates only history table
         //called every time there is new due or request is added
-        
+
         ArrayList<Transaction> DoneTransaction = userLogged.getDoneTransactions();
-        
-        if(DoneTransaction == null){
+
+        if (DoneTransaction == null) {
             return;
         }
-        
+
         Object[][] data = new Object[DoneTransaction.size()][3];
         String[] headers = {"Name + Reason", "Type", "Amount"};
-        
+
         int row = 0;
-        
-        for(Transaction t : DoneTransaction){
+
+        //this logic will take the transaction of the specific user and then take all neccessary info
+        //and input them into the table + following the table heading format
+        //Only DONE are taken
+        for (Transaction t : DoneTransaction) {
             String displayName = users.get(t.getUserNameFrom()).getDisplayName();
             data[row][0] = displayName + ", " + t.getReason();
             data[row][1] = t.getTransactionType();
             data[row][2] = t.getAmount();
             row++;
         }
-        
-        DefaultTableModel dfm = (DefaultTableModel)jTable3.getModel();
+
+        DefaultTableModel dfm = (DefaultTableModel) HistoryLog_Table.getModel();
         dfm.setDataVector(data, headers);
     }
-    
-    public void UsernamePUT(){
+
+    //this is unique method that will switch all the texts in the MainWindow with
+    //the information that was provided by user(login or registration)
+    //it will replace all "TEXT HERE" everywhere with approprtiate information
+    //also this method calculates the total and due balance for the tables
+    //also this method recolor numbers based on the balance (negative = red, positive = green, 0 = gray)
+    public void UsernamePUT() {
         String na = userLogged.getUserName();
         Main_UserInfo_Text_Username.setText(na);
-        
+
         ArrayList<Transaction> UserTransaction = userLogged.getUserTransactions();
         ArrayList<Transaction> DueTransaction = userLogged.getDueTransactions();
-        
+
         int row1 = 0;
         double totaldue = 0;
-        
+
         int row2 = 0;
-        double totaluser =  0;
-        
+        double totaluser = 0;
+
         if (userLogged.getUserTransactions() != null) {
-            for(Transaction t : DueTransaction){
+            for (Transaction t : DueTransaction) {
                 double mon = t.getAmount();
                 totaldue += mon;
                 row1++;
             }
 
-            for(Transaction t : UserTransaction){
+            for (Transaction t : UserTransaction) {
                 double mon2 = t.getAmount();
                 String type = t.getTransactionType();
-                 if(type.equals("owe")){
-                    if(!t.isDone()){
+                if (type.equals("owe")) {
+                    if (!t.isDone()) {
                         totaluser -= mon2;
                     }
-                }
-                else{
-                    if(!t.isDone()){
+                } else {
+                    if (!t.isDone()) {
                         totaluser += mon2;
                     }
                 }
@@ -1372,22 +1401,28 @@ public class MainWindow extends javax.swing.JFrame {
                 row2++;
             }
         }
-        
-        if (totaluser < 0)
+
+        if (totaluser < 0) {
             Main_Dashboard_Text_Money1.setForeground(Color.red);
-        
-        else if (totaluser == 0)
+        } else if (totaluser == 0) {
             Main_Dashboard_Text_Money1.setForeground(Color.gray);
-        
-        else
+        } else {
             Main_Dashboard_Text_Money1.setForeground(Color.green);
-        jLabel8.setText("$"+totaldue+"");
-        Main_Dashboard_Text_Money1.setText("$"+totaluser+"");
-        
+        }
+        DueWindow_Label_dues.setText("$" + totaldue + "");
+        Main_Dashboard_Text_Money1.setText("$" + totaluser + "");
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable DuePanel_Table;
+    private javax.swing.JLabel DueWindow_Label_dues;
+    private javax.swing.JLabel DueWindow_Label_yourdues;
+    private javax.swing.JTable HistoryLog_Table;
+    private javax.swing.JLabel HistoryLog_label_HL;
     private javax.swing.JPanel LoginWindow;
+    private javax.swing.JLabel LoginWindow_label_logo;
+    private javax.swing.JTable MainDashboard_Table;
     private javax.swing.JPanel MainWindow;
     private javax.swing.JPanel MainWindow_Panel_Dashboard;
     private javax.swing.JPanel MainWindow_Panel_Dues;
@@ -1400,8 +1435,8 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JToggleButton MainWindow_ToggleB_History;
     private javax.swing.JButton MainWindow_button_cancel;
     private javax.swing.JButton MainWindow_button_cancel1;
-    private javax.swing.JButton MainWindow_button_submit;
-    private javax.swing.JButton MainWindow_button_submit1;
+    private javax.swing.JButton MainWindow_button_submitOwe;
+    private javax.swing.JButton MainWindow_button_submitRequest;
     private javax.swing.JLabel MainWindow_label_Reason;
     private javax.swing.JLabel MainWindow_label_Reason1;
     private javax.swing.JLabel MainWindow_label_amount;
@@ -1427,36 +1462,22 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JLabel Main_Dashboard_Text_Money1;
     private javax.swing.JButton Main_UserInfo_Button_LogOut;
     private javax.swing.JLabel Main_UserInfo_Text_Username;
+    private javax.swing.JButton RegWindow_button_back;
+    private javax.swing.JButton RegWindow_button_register;
+    private javax.swing.JLabel RegWindow_label_newuser;
+    private javax.swing.JLabel RegWindow_label_password;
+    private javax.swing.JLabel RegWindow_label_realname;
+    private javax.swing.JLabel RegWindow_label_username;
+    private javax.swing.JTextField RegWindow_textfield_password;
+    private javax.swing.JTextField RegWindow_textfield_username;
+    private javax.swing.JTextField RegWindow_textfiled_realname;
     private javax.swing.JPanel RegistrationWindow;
     private javax.swing.JPanel UserInfo;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable2;
-    private javax.swing.JTable jTable3;
-    private javax.swing.JTable jTable4;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextPane jTextPane1;
     private javax.swing.JButton loginWindow_Button_newUser;
     private javax.swing.JButton loginWindow_button_enter;
     private javax.swing.JLabel loginWindow_label_password;
     private javax.swing.JLabel loginWindow_label_username;
+    private javax.swing.JLabel loginWindow_label_username1;
     private javax.swing.JTextField loginWindow_textField_password;
     private javax.swing.JTextField loginWindow_textField_username;
     private javax.swing.JLabel longWindow_label_wornglogin;

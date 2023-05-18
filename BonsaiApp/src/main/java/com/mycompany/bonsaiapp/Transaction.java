@@ -13,7 +13,7 @@ public class Transaction {
     //you can create and modify transactions if you want, but need to be careful as 
     //some of the setters are not suppose to be here, and I dont know which exactly
     //From -> type -> amount -> To -> reason -> date -> time(Current?)
-    
+
     private String userNameFrom;
     private String transactionType;
     private double amount;
@@ -34,6 +34,17 @@ public class Transaction {
         this.done = done;
     }
 
+    //New constructor method for newly created tranactions, as they dont use time, as it is happened right now
+    //instead of includeing time, we use local time
+    public Transaction(String userNameFrom, String transactionType, double amount, String userNameTo, String reason, boolean done) {
+        this.userNameFrom = userNameFrom;
+        this.transactionType = transactionType;
+        this.amount = amount;
+        this.userNameTo = userNameTo;
+        this.reason = reason;
+        this.done = done;
+    }
+
     public boolean isDone() {
         return done;
     }
@@ -41,7 +52,6 @@ public class Transaction {
     public void setDone(boolean done) {
         this.done = done;
     }
-    
 
     public String getUserNameFrom() {
         return userNameFrom;
